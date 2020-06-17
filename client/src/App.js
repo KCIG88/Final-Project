@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import Navbar from "./components/Navbar"
 import ContentWrapper from "./components/ContentWrapper"
-import Home from "./pages/Home"
+import Dashboard from "./pages/Dashboard"
+
 import Footer from "./components/Footer"
 
 
@@ -11,7 +12,7 @@ function App() {
   <>
    <Navbar />
    <ContentWrapper />
-   <Home />
+   <Dashboard />
    <Footer />
 </>
   );

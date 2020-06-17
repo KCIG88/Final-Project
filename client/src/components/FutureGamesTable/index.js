@@ -1,15 +1,15 @@
 import React from "react";
+import "../../styles/FutureGamesTable.css";
 
 
 
-
-function Home() {
+function FutureGamesTables() {
 
 
   return (
   
 <>
-<p>Future Games</p>
+<h1>Future Games</h1>
 <table class="table">
   <thead>
     <tr>
@@ -18,7 +18,7 @@ function Home() {
       <th>Away Team</th>
       <th>Home Team Line</th>
       <th>Home Team Win</th>
-      <th>Action</th>
+      <th>Bet on this game</th>
     </tr>
   </thead>
   <tbody>
@@ -81,4 +81,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default FutureGamesTables;

@@ -1,6 +1,7 @@
 footer {
   /* footer height must match offset in ContentWrapper css */
   background-color: black;
+  display: none;
 }
 .footer-level {
   height: 42px;
