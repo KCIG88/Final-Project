@@ -1,14 +1,26 @@
 import React from "react";
-import "../../styles/MyBetsTable.css";
+
+import "../styles/Profile.css";
 
 
+function Dashboard() {
 
-function MyBetsTable() {
+
+  return (
+  
 
 
-    return (
-
-        <>
+<body>
+    <img src='https://avatars0.githubusercontent.com/u/58921765?v=4' class="rounded-circle"  alt="" id='profileImg'></img>
+    <div class="container">
+    <div class="jumbotron text-center shadow p-3 mb-5 bg-light rounded">
+            <h1>Username : </h1>
+            <h1>Email : </h1>
+            <button>Add Funds</button>
+        </div>
+    </div>
+    <div class="container">
+    <div class="jumbotron text-center shadow p-3 mb-5 bg-light rounded">
         <div>
             <body>
                 <p>My Bets</p>
@@ -33,10 +45,13 @@ function MyBetsTable() {
                     </tr></tbody>
                 </table>
             </body>
+        </div>            
         </div>
-        </>
+    </div>
+</body>
 
-    );
-}
+     
+  );
+};
 
-export default MyBetsTable;
+export default Dashboard;
