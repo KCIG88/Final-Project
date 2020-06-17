@@ -1,5 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import "./style.css";
+import "../../styles/Navbar.css";
 
 
 
@@ -12,10 +13,10 @@ function Navbar() {
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand-is-dark">
     <a class="navbar-item" href="/">
-      <img src="https://www.pixelslogodesign.com/wp-content/uploads/2016/03/sports.png" width="112" height="28"/>
+      <img src="https://www.pixelslogodesign.com/wp-content/uploads/2016/03/sports.png" width="112" height="28" alt=""/>
     </a>
 
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" alt="">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
