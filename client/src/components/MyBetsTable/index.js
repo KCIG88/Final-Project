@@ -29,7 +29,7 @@ function MyBetsTable() {
                         <td>Liverpool</td>
                         <td>-1.5(-153)</td>
                         <td>-200</td>
-                        <td>Button</td>
+                        <td><button>Add Funds</button></td>
                     </tr></tbody>
                 </table>
             </body>

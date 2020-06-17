@@ -1,5 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "../../styles/Navbar.css";
 
 
@@ -29,9 +31,9 @@ function Navbar() {
         Home
       </a>
 
-      <a class="navbar-item">
+      <Link class="navbar-item" to="/profile">
         Profile
-      </a>
+      </Link>
 
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
