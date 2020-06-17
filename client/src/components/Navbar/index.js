@@ -66,12 +66,12 @@ function Navbar() {
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
+          <Link class="button is-primary" to="/signup">
             <strong>Sign up</strong>
-          </a>
-          <a class="button is-dark">
-            Log in
-          </a>
+          </Link>
+          <Link class="button is-dark" to="/signin">
+            Sign In
+          </Link>
         </div>
       </div>
     </div>
