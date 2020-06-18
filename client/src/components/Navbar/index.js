@@ -27,9 +27,9 @@ function Navbar() {
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item">
+      <Link class="navbar-item" to="/">
         Home
-      </a>
+      </Link>
 
       <Link class="navbar-item" to="/profile">
         Profile
@@ -70,7 +70,7 @@ function Navbar() {
             <strong>Sign up</strong>
           </Link>
           <Link class="button is-dark" to="/signin">
-            Sign In
+          <strong>Sign In</strong>
           </Link>
         </div>
       </div>

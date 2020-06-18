@@ -16,14 +16,22 @@ function App() {
       <div>
         <Navbar />
         <Switch>
-          <Route exact path={["/profile"]}> component={Profile} />
+
+          <Route exact path={["/profile"]}> 
           <Profile />
           </Route>
-          <Route exact path="/signin" component={SignIn} />
-          <Route exact path="/signup" component={SignUp} />
-          <Route>
+
+          <Route exact path={["/signin"]} >
+          <SignIn />
+          </Route>
+          <Route exact path={["/signup"]}>
+          <SignUp />
+          </Route>
+          
+          <Route exact path={["/", "/home"]}>
             <Dashboard />
           </Route>
+
         </Switch>
         <Footer />
       </div>
