@@ -66,3 +66,26 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+1) what will app do?
+Will allow user to create an account, login and add funds. Allow the user to wager on various events(sports/esports/prop bets) subtracting or adding funds depending on the outcome .
+2.)what technologies do you anticipate using?
+ReactJS
+NodeJS
+Heroku
+MongoDB - Mongoose
+Passport
+API's---sporting event data
+Express
+CSS Library (undecided)
+3.)Who will be responsible for which parts of the app (inital estimate)?
+Chris-React Components / Frontend
+Kevin-DB / backend
+Chad-React Pages / Frontend
+We will all help in all phases of the project where help is needed.
+4)Who will be responsible for each part of deliverable #1?
+	a. Overview of the intended app and WHY you fell it is valuable (Chris)
+	b. Breakdown of team-member roles (Chris, Chad, Kevin)
+	c. screenhots of project board (Chad)
+	d. schedule of completing various task/features/phases of your project (Chris, Chad, Kevin)
+	e. detailed screen flow mock-ups and design with annotations (Kevin)
