@@ -89,4 +89,4 @@ We will all help in all phases of the project where help is needed.
 	c. screenhots of project board (Chad)
 	d. schedule of completing various task/features/phases of your project (Chris, Chad, Kevin)
 	e. detailed screen flow mock-ups and design with annotations (Kevin)
-    week 1 deliverables
+    week 1 deliverables updated 6-17-2020
