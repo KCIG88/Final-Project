@@ -1,21 +1,28 @@
-import React from "react";
-
+import React, { Fragment } from "react";
 import "../styles/Profile.css";
+import { useAuth0 } from "../react-auth0-spa";
 
 
-function Profile() {
 
+
+const Profile = () => {
+    const { loading, user } = useAuth0();
+
+    if (loading || !user) {
+        return <div>Loading...</div>;
+    }
 
     return (
-
-
-
         <body>
-            <img src='https://avatars0.githubusercontent.com/u/58921765?v=4' class="rounded-circle" alt="" id='profileImg'></img>
+            {/* <img src='https://avatars0.githubusercontent.com/u/58921765?v=4' class="rounded-circle" alt="" id='profileImg'></img> */}
             <div class="container">
                 <div class="jumbotron text-center shadow p-3 mb-5 bg-light rounded">
-                    <h1>Username : </h1>
-                    <h1>Email : </h1>
+                    <Fragment>
+                        <img src={user.picture} alt="Profile" />
+                        <h2>{user.name}</h2>
+                        <p>{user.email}</p>
+                        <code>{JSON.stringify(user, null, 2)}</code>
+                    </Fragment>
                     <button>Add Funds</button>
                 </div>
             </div>
