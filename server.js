@@ -7,9 +7,9 @@ const cookieParser = require("cookie-parser");
 const expressValidator = require("express-validator");
 const cors = require("cors");
 require("dotenv").config();
-
-// Routes
 const routes = require("./routes");
+// Routes
+// const routes = require("./routes");
 
 const PORT = process.env.PORT || 3000;
 const app = express();

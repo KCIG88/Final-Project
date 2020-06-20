@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import API from "../utils/API";
+import API from "../utils/api";
 import { authenticate, isAuthenticated } from "../utils/auth";
 import AuthForm from "../components/AuthForm";
 import AuthInputField from "../components/AuthForm/AuthInputField";
