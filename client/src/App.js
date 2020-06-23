@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
-import Navbar from "../src/Navbar/index"
+import Navbar from "./components/Navbar/index"
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Dashboard from "./pages/Dashboard"
 import Profile from "./pages/Profile"
 import Footer from "./components/Footer"
-import { useAuth0 } from "../src/react-auth0-spa";
+import { useAuth0 } from "./react-auth0-spa";
 import history from "../src/utils/history"
 
 function App() {
