@@ -24,6 +24,7 @@ class FutureGamesTables extends Component {
 
   render() {
     const {results} = this.state
+    console.log(results)
     return (
 
       <>
@@ -44,9 +45,15 @@ class FutureGamesTables extends Component {
             {results.map(event => {
               return (<tr>
                 <th>{event.dateEvent}</th>
+              <td>{event.strHomeTeam}</td>
+              <td>{event.strAwayTeam}</td>
+              <td>-1.5(-153)</td>
+              <td>-200</td>
+              <td><button>Add Funds</button></td>
+
               </tr>
             )})}
-            <tr>
+            {/* <tr>
               <th>{results[0].dateEvent}</th>
               <td>Leceister city</td>
               <td>Liverpool</td>
@@ -93,7 +100,7 @@ class FutureGamesTables extends Component {
               <td>-1.5(-153)</td>
               <td>-200</td>
               <td>Button</td>
-            </tr>
+            </tr> */}
 
 
 
