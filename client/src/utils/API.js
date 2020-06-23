@@ -13,7 +13,7 @@ export default {
     //             return {
     //                 gameDate: game.dateEvent,
     //                 strAwayTeam: game.volumeInfo.title,
-                   
+
     //             };
     //         });
     //         resolve(results);
@@ -23,10 +23,13 @@ export default {
     // },
 
 
-    getnext15gamesbyleague: function() {
-          return axios.get("https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id=4328");
-        },
-      
+    getnext15gamesbyleague: function () {
+        return axios.get("https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id=4328");
+    },
+
+    getoddsapi: function () {
+        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=11e0c196eb033b5646943c2e6b522ddf&sport=soccer_epl&region=uk&mkt=spreads");
+    },
 
     signUp: function (user) {
         return axios.post("/api/auth/signup", user);
@@ -48,5 +51,5 @@ export default {
         });
     },
 
-   
+
 };

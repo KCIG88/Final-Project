@@ -11,19 +11,26 @@ class FutureGamesTables extends Component {
 
 
   componentDidMount() {
-    this.getgamesbyleague();
+    this.getsocceroddsapi();
   }
 
 
-  getgamesbyleague = (props) => {
-    API.getnext15gamesbyleague(props)
-      .then(res => this.setState({ results: res.data.events }))
+  // getgamesbyleague = (props) => {
+  //   API.getnext15gamesbyleague(props)
+  //     .then(res => this.setState({ results: res }))
+  //     .then(res => { console.log(res) })
+  //     .catch(err => console.log(err));
+  // };
+
+  getsocceroddsapi = (props) => {
+    API.getoddsapi(props)
+      .then(res => this.setState({ results: res.data.data }))
       .then(res => { console.log(res) })
       .catch(err => console.log(err));
   };
 
   render() {
-    const {results} = this.state
+    const { results } = this.state
     console.log(results)
     return (
 
@@ -42,65 +49,18 @@ class FutureGamesTables extends Component {
           </thead>
 
           <tbody>
-            {results.map(event => {
+            {results.map(data => {
               return (<tr>
-                <th>{event.dateEvent}</th>
-              <td>{event.strHomeTeam}</td>
-              <td>{event.strAwayTeam}</td>
-              <td>-1.5(-153)</td>
+                <th>{data.commence_time}</th>
+              <td>{data.home_team}</td>
+              <td>{data.teams}</td>
+              <td>{}</td>
               <td>-200</td>
               <td><button>Add Funds</button></td>
 
               </tr>
             )})}
-            {/* <tr>
-              <th>{results[0].dateEvent}</th>
-              <td>Leceister city</td>
-              <td>Liverpool</td>
-              <td>-1.5(-153)</td>
-              <td>-200</td>
-              <td><button>Add Funds</button></td>
-            </tr>
-            <tr>
-              <th>01/01/2020</th>
-              <td>Leicester City </td>
-              <td>Liverpool</td>
-              <td>-1.5(-153)</td>
-              <td>-200</td>
-              <td><button>Add Funds</button></td>
-            </tr>
-            <tr>
-              <th>01/01/2020</th>
-              <td>Leicester City </td>
-              <td>Liverpool</td>
-              <td>-1.5(-153)</td>
-              <td>-200</td>
-              <td><button>Add Funds</button></td>
-            </tr>
-            <tr>
-              <th>01/01/2020</th>
-              <td>Leicester City </td>
-              <td>Liverpool</td>
-              <td>-1.5(-153)</td>
-              <td>-200</td>
-              <td><button>Add Funds</button></td>
-            </tr>
-            <tr>
-              <th>01/01/2020</th>
-              <td>Leicester City </td>
-              <td>Liverpool</td>
-              <td>-1.5(-153)</td>
-              <td>-200</td>
-              <td><button>Add Funds</button></td>
-            </tr>
-            <tr>
-              <th>01/01/2020</th>
-              <td>Leicester City </td>
-              <td>Liverpool</td>
-              <td>-1.5(-153)</td>
-              <td>-200</td>
-              <td>Button</td>
-            </tr> */}
+           
 
 
 
