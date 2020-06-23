@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { Link } from "react-router-dom";
-import { useAuth0 } from "../react-auth0-spa"
+import { useAuth0 } from "../../react-auth0-spa"
 
-import "../styles/Navbar.css";
+import "../../styles/Navbar.css";
 
 
 function Navbar() {

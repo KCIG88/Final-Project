@@ -1,4 +1,4 @@
-import API from "./api";
+import API from "./API.js";
 
 export const authenticate = (data, next) => {
   if (typeof window !== "undefined") {
