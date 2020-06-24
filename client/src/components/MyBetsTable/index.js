@@ -11,7 +11,7 @@ function MyBetsTable() {
         <>
         <div>
             <body>
-                <p>My Bets</p>
+                <h1>My Bets</h1>
                 <table class="table">
                     <thead>
                         <tr>

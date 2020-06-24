@@ -3,7 +3,7 @@ import API from "../../utils/API";
 
 import "../../styles/MyBetsTable.css";
 
-class FutureGamesTables extends Component {
+class MLBTable extends Component {
 
   state = {
     results: [],
@@ -11,25 +11,12 @@ class FutureGamesTables extends Component {
 
 
   componentDidMount() {
-    this.getsocceroddsapi();
+    this.getMLBapi();
   }
 
-  // apifootyball = () => {
-  //   API.apifootballcall()
-  //     .then(res => this.setState({ results: res.data}))
-  //     .then(res => { console.log(res) })
-  //     .catch(err => console.log(err));
-  // };
 
-  // getgamesbyleague = (props) => {
-  //   API.getnext15gamesbyleague(props)
-  //     .then(res => this.setState({ results: res.data }))
-  //     .then(res => { console.log(res) })
-  //     .catch(err => console.log(err));
-  // };
-
-  getsocceroddsapi = (props) => {
-    API.getoddsapi(props)
+  getMLBapi = (props) => {
+    API.getMLBoddsapi(props)
       .then(res => this.setState({ results: res.data.data }))
       .then(res => { console.log(res) })
       .catch(err => console.log(err));
@@ -41,7 +28,8 @@ class FutureGamesTables extends Component {
     return (
 
       <>
-        <h1>Future Games</h1>
+        <h1>MLB Games</h1>
+        <h1>No Results at this moment</h1>
         <table class="table">
           <thead>
             <tr>
@@ -65,12 +53,10 @@ class FutureGamesTables extends Component {
               <td><button>Add Funds</button></td>
 
               </tr>
-            )})}
+            )})} 
            
 
-
-
-          </tbody>
+           </tbody>
         </table>
 
       </>
@@ -78,4 +64,4 @@ class FutureGamesTables extends Component {
     );
   }
 }
-export default FutureGamesTables;
+export default MLBTable;
