@@ -9,6 +9,12 @@ import Profile from "./pages/Profile"
 import Footer from "./components/Footer"
 import { useAuth0 } from "./react-auth0-spa";
 import history from "../src/utils/history"
+import NFL from "./pages/NFL";
+import NCAA from "./pages/NCAA";
+import MLB from "./pages/MLB";
+import EPL from "./pages/EPL";
+import LALIGA from "./pages/LALIGA";
+import BUNDESLIGA from "./pages/BUNDESLIGA";
 
 function App() {
 
@@ -31,6 +37,31 @@ function App() {
             <Route exact path={["/profile"]}>
               <Profile />
             </Route>
+
+            <Route exact path={["/nfl"]}>
+              <NFL />
+            </Route>
+
+            <Route exact path={["/ncaa"]}>
+              <NCAA />
+            </Route>
+
+            <Route exact path={["/mlb"]}>
+              <MLB />
+            </Route>
+
+            <Route exact path={["/epl"]}>
+              <EPL />
+            </Route>
+
+            <Route exact path={["/LALIGA"]}>
+              <LALIGA />
+            </Route>
+
+            <Route exact path={["/BUNDESLIGA"]}>
+              <BUNDESLIGA />
+            </Route>
+          
 
             <Route exact path={["/signin"]} >
               <SignIn />

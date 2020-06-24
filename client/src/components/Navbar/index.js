@@ -45,30 +45,32 @@ function Navbar() {
               Profile
       </Link>
 
+
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">
                 Sports
         </a>
 
               <div class="navbar-dropdown">
-                <a class="navbar-item">
+                <Link class="navbar-item" to="/nfl">
                   NFL
-          </a>
-                <a class="navbar-item">
-                  NBA
-          </a>
-                <a class="navbar-item">
+          </Link>
+          <Link class="navbar-item" to="/ncaa">
+                  NCAA Football
+          </Link>
+                <Link class="navbar-item" to="/mlb">
+                  MLB
+          </Link>
+                <Link class="navbar-item" to="/epl">
                   EPL
-          </a>
-                <a class="navbar-item">
-                  Baseball
-          </a>
-                <a class="navbar-item">
+          </Link>
+          <Link class="navbar-item" to="/laliga">
                   La Liga
-          </a>
-                <a class="navbar-item">
+          </Link>
+          <Link class="navbar-item" to="/bundesliga">
                   Bundesliga
-          </a>
+          </Link>
+                
               </div>
             </div>
           </div>

@@ -11,8 +11,8 @@ function Dashboard() {
   
 <>
 
-< FutureGamesTable className="dashboardContainerRight"/>
-< MyBetsTable className="dashboardRightBottom"/>
+< FutureGamesTable />
+< MyBetsTable />
 
 </>
      
