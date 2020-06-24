@@ -51,7 +51,7 @@ class FutureGamesTables extends Component {
           <tbody>
             {results.map(data => {
               return (<tr>
-                <th>{data.commence_time}</th>
+                <td>{data.commence_time}</td>
               <td>{data.home_team}</td>
               <td>{data.teams}</td>
               <td>{}</td>
