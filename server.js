@@ -8,7 +8,6 @@ const expressValidator = require("express-validator");
 const cors = require("cors");
 require("dotenv").config();
 const routes = require("./routes");
-const publicPath = path.join(__dirname, '..', 'public');
 // Routes
 // const routes = require("./routes");
 
@@ -38,9 +37,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(publicPath, 'index.html'));
-});
 // routes middleware
 app.use(routes);
 
