@@ -53,7 +53,7 @@ class NCAATable extends Component {
               <td>{data.teams[0]}</td>
               <td></td>
               <td></td>
-              <td><button>Add Funds</button></td>
+              <td><button>Place a Bet</button></td>
 
               </tr>
             )})} 

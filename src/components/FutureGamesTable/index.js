@@ -56,7 +56,7 @@ class FutureGamesTables extends Component {
               <td>{data.teams}</td>
               <td>{}</td>
               <td>-200</td>
-              <td><button>Add Funds</button></td>
+              <td><button>Place a Bet</button></td>
 
               </tr>
             )})}

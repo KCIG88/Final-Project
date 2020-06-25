@@ -15,6 +15,7 @@ import MLB from "./pages/MLB";
 import EPL from "./pages/EPL";
 import LALIGA from "./pages/LALIGA";
 import BUNDESLIGA from "./pages/BUNDESLIGA";
+import AddBalance from "./pages/AddBalance";
 
 function App() {
 
@@ -36,6 +37,10 @@ function App() {
 
             <Route exact path={["/profile"]}>
               <Profile />
+            </Route>
+
+            <Route exact path={["/addbalance"]}>
+              <AddBalance />
             </Route>
 
             <Route exact path={["/nfl"]}>

@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 
-
-
 class NflTable extends Component {
 
   state = {
@@ -49,7 +47,7 @@ class NflTable extends Component {
               <td>{data.teams[0]}</td>
               <td></td>
               <td></td>
-              <td><button>Add Funds</button></td>
+              <td><button>Place a Bet</button></td>
 
               </tr>
             )})} 
