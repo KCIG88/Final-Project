@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 
-import "../../styles/MyBetsTable.css";
+import "../../styles/LaLigaTable.css";
 
 class LALIGATable extends Component {
 
@@ -28,7 +28,7 @@ class LALIGATable extends Component {
     return (
 
       <>
-        <h1>LA Liga Games</h1>
+        <h1 id="ligabanner">LA Liga Games</h1>
         <table class="table">
           <thead>
             <tr>

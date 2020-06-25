@@ -19,9 +19,9 @@ function Navbar() {
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand-is-dark">
           <a class="navbar-item" href="/">
-            <img src="https://www.pixelslogodesign.com/wp-content/uploads/2016/03/sports.png" width="112" height="28" alt="" />
+            <img id="logo" src="https://lh3.googleusercontent.com/VtNJ-Oz764laDLxZctvodnze-tGcaNDwZsdlZVKg7dXe3nu4FGuKWIrpeCgAz1NP5jqX=s85" width="112" height="28" alt="" />
           </a>
-
+          <br></br>
           {!isAuthenticated && (
             <button onClick={() => loginWithRedirect({})}>Log in</button>
           )}
