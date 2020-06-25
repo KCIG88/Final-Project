@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 
-import "../../styles/MyBetsTable.css";
+import "../../styles/BundesligaTable.css";
 
 class BundesligaTable extends Component {
 
@@ -28,7 +28,7 @@ class BundesligaTable extends Component {
     return (
 
       <>
-        <h1>Bundesliga Soccer Games</h1>
+        <h1 id="bundesligabanner">Bundesliga Soccer Games</h1>
         <table class="table">
           <thead>
             <tr>

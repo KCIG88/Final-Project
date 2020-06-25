@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 
-import "../../styles/MyBetsTable.css";
+import "../../styles/NcaaTable.css";
 
 class NCAATable extends Component {
 
@@ -28,7 +28,11 @@ class NCAATable extends Component {
     return (
 
       <>
-        <h1>Top Picked NCAA Football Games</h1>
+        <h1 id="NCAAbanner">Top Picked NCAA Football Games</h1>
+        <a class="navbar-item" href="https://www.ncaa.com">
+            <img id="logo" src="../images/ncaalogo.jpeg" justify-fit="center" alt="" />
+        </a>
+        <image id="ncaalogo" src="../images/ncaalogo.jpeg"></image>
         <table class="table">
           <thead>
             <tr>

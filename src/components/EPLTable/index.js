@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 
-import "../../styles/MyBetsTable.css";
+import "../../styles/EPLTable.css";
 
 class EPLTable extends Component {
 
@@ -28,7 +28,7 @@ class EPLTable extends Component {
     return (
 
       <>
-        <h1>English Premier League Games</h1>
+        <h1 id="eplbanner">English Premier League Games</h1>
         <table class="table">
           <thead>
             <tr>
@@ -46,8 +46,8 @@ class EPLTable extends Component {
               return (<tr>
                 <td>{data.commence_time}</td>
               <td>{data.home_team}</td>
-              <td>{data.teams[0]}</td>
-              <td></td>
+              <td>{data.teams[1]}</td>
+              <td>{data.sites[0].odds.spreads.points[0]}</td>
               <td></td>
               <td><button>Add Funds</button></td>
 

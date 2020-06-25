@@ -1,11 +1,11 @@
 
 /* Available Games to bet on CSS */
-#eplbanner {
+#ligabanner {
     color: white;
     padding: 1.5vh 0;
     font-size: 60px;
-    background-image: url("../images/britishflag.jpeg");
-    background-size: cover;
+    background-image: url("../images/spanishflag.jpeg");
+    background-size:cover;
   }
   
   

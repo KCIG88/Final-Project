@@ -1,12 +1,12 @@
 
 /* Available Games to bet on CSS */
-#eplbanner {
+#bundesligabanner {
     color: white;
     padding: 1.5vh 0;
     font-size: 60px;
-    background-image: url("../images/britishflag.jpeg");
-    background-size: cover;
-  }
+    background-image: url("../images/germanyflag.jpeg");
+    background-size:cover;
+    background-position: top;  }
   
   
   
