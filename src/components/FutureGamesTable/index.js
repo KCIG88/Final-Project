@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-
+import { Link } from "react-router-dom";
 import "../../styles/FutureGamesTable.css";
 
 class FutureGamesTables extends Component {
@@ -35,6 +35,8 @@ class FutureGamesTables extends Component {
     return (
 
       <>
+      <div class="container is-fluid">
+  <div class="notification">
         <h1>Future Games</h1>
         <table class="table">
           <thead>
@@ -55,9 +57,9 @@ class FutureGamesTables extends Component {
               <td>{data.home_team}</td>
               <td>{data.teams}</td>
               <td>{}</td>
-              <td>-200</td>
-              <td><button>Place a Bet</button></td>
-
+              <td>{-200}</td>
+              
+              <td><Link to="/placebet"><button>Place a Bet</button></Link></td>
               </tr>
             )})}
            
@@ -66,6 +68,8 @@ class FutureGamesTables extends Component {
 
           </tbody>
         </table>
+        </div>
+</div>
 
       </>
 

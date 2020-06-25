@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../../styles/BundesligaTable.css";
+
 
 
 class AddBalanceCard extends Component {
@@ -9,7 +9,14 @@ class AddBalanceCard extends Component {
     return (
 
       <>
-      
+      <div class="container is-fluid">
+  <div class="notification">
+  
+
+
+
+
+
 
 
         <div class="card">
@@ -48,7 +55,8 @@ class AddBalanceCard extends Component {
             </div>
           </div>
 
-
+          </div>
+      </div>
 
       </>
 

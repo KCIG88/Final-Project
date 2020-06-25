@@ -28,6 +28,8 @@ class LALIGATable extends Component {
     return (
 
       <>
+      <div class="container is-fluid">
+  <div class="notification">
         <h1 id="ligabanner">LA Liga Games</h1>
         <table class="table">
           <thead>
@@ -57,7 +59,9 @@ class LALIGATable extends Component {
 
            </tbody>
         </table>
-
+        </div>
+        </div>
+        
       </>
 
     );

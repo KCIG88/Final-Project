@@ -26,6 +26,8 @@ class NflTable extends Component {
     return (
 
       <>
+         <div class="container is-fluid">
+  <div class="notification">
         <h1>Week 1-16 NFL Games</h1>
         <table class="table">
           <thead>
@@ -55,7 +57,7 @@ class NflTable extends Component {
 
            </tbody>
         </table>
-
+        </div></div>
       </>
 
     );

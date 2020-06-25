@@ -28,6 +28,8 @@ class NCAATable extends Component {
     return (
 
       <>
+        <div class="container is-fluid">
+  <div class="notification">
         <h1 id="NCAAbanner">Top Picked NCAA Football Games</h1>
         <a class="navbar-item" href="https://www.ncaa.com">
             <img id="logo" src="../images/ncaalogo.jpeg" justify-fit="center" alt="" />
@@ -61,6 +63,8 @@ class NCAATable extends Component {
 
            </tbody>
         </table>
+        </div>
+        </div>
 
       </>
 

@@ -16,6 +16,7 @@ import EPL from "./pages/EPL";
 import LALIGA from "./pages/LALIGA";
 import BUNDESLIGA from "./pages/BUNDESLIGA";
 import AddBalance from "./pages/AddBalance";
+import PlaceBet from './pages/PlaceBet';
 
 function App() {
 
@@ -41,6 +42,10 @@ function App() {
 
             <Route exact path={["/addbalance"]}>
               <AddBalance />
+            </Route>
+
+            <Route exact path={["/placebet"]}>
+              <PlaceBet />
             </Route>
 
             <Route exact path={["/nfl"]}>

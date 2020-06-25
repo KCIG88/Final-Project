@@ -15,7 +15,7 @@ const Profile = () => {
     return (
         <body>
             {/* <img src='https://avatars0.githubusercontent.com/u/58921765?v=4' class="rounded-circle" alt="" id='profileImg'></img> */}
-            <div class="container">
+            <div class="container is-fluid">
                 <div class="jumbotron text-center shadow p-3 mb-5 bg-light rounded">
                     <Fragment>
                         <img src={user.picture} alt="Profile" />

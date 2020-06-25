@@ -28,6 +28,10 @@ class EPLTable extends Component {
     return (
 
       <>
+      <div class="container is-fluid">
+  <div class="notification">
+
+
         <h1 id="eplbanner">English Premier League Games</h1>
         <table class="table">
           <thead>
@@ -47,7 +51,7 @@ class EPLTable extends Component {
                 <td>{data.commence_time}</td>
               <td>{data.home_team}</td>
               <td>{data.teams[1]}</td>
-              <td>{data.sites[0].odds.spreads.points[0]}</td>
+              <td>{}</td>
               <td></td>
               <td><button>Place a Bet</button></td>
 
@@ -57,7 +61,8 @@ class EPLTable extends Component {
 
            </tbody>
         </table>
-
+        </div>
+</div>
       </>
 
     );
