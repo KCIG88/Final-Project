@@ -1,12 +1,15 @@
 
 /* Available Games to bet on CSS */
-#eplbanner {
+#NCAAbanner {
     color: white;
     padding: 1.5vh 0;
     font-size: 60px;
-    background-image: url("../images/britishflag.jpeg");
-    background-size: cover;
+    background-color: navy
+    ;
+    background-size:cover;
   }
+
+
   
   
   
