@@ -49,7 +49,7 @@ class EPLTable extends Component {
               <td>{data.teams[1]}</td>
               <td>{data.sites[0].odds.spreads.points[0]}</td>
               <td></td>
-              <td><button>Add Funds</button></td>
+              <td><button>Place a Bet</button></td>
 
               </tr>
             )})} 
