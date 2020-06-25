@@ -22,11 +22,7 @@ function Navbar() {
             <img id="logo" src="https://lh3.googleusercontent.com/VtNJ-Oz764laDLxZctvodnze-tGcaNDwZsdlZVKg7dXe3nu4FGuKWIrpeCgAz1NP5jqX=s85" width="112" height="28" alt="" />
           </a>
           <br></br>
-          {!isAuthenticated && (
-            <button onClick={() => loginWithRedirect({})}>Log in</button>
-          )}
-
-          {isAuthenticated && <button onClick={() => logout()}>Log out</button>}
+          
 
           <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" alt="">
             <span aria-hidden="true"></span>
@@ -92,7 +88,11 @@ function Navbar() {
             </div>
           </div> */}
         </div>
+        {!isAuthenticated && (
+            <button onClick={() => loginWithRedirect({})}>Log in</button>
+          )}
 
+          {isAuthenticated && <button onClick={() => logout()}>Log out</button>}
       </nav>
     </div>
   );

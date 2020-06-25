@@ -28,6 +28,8 @@ class MLBTable extends Component {
     return (
 
       <>
+        <div class="container is-fluid">
+  <div class="notification">
         <h1>MLB Games</h1>
         <h1>No Results at this moment</h1>
         <table class="table">
@@ -58,7 +60,8 @@ class MLBTable extends Component {
 
            </tbody>
         </table>
-
+        </div></div>
+        
       </>
 
     );

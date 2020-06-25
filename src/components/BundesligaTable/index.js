@@ -28,6 +28,8 @@ class BundesligaTable extends Component {
     return (
 
       <>
+         <div class="container is-fluid">
+  <div class="notification">
         <h1 id="bundesligabanner">Bundesliga Soccer Games</h1>
         <table class="table">
           <thead>
@@ -57,7 +59,7 @@ class BundesligaTable extends Component {
 
            </tbody>
         </table>
-
+</div></div>
       </>
 
     );

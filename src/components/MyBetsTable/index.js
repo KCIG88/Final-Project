@@ -9,6 +9,8 @@ function MyBetsTable() {
     return (
 
         <>
+        <div class="container is-fluid">
+  <div class="notification">
         <div>
             <body>
                 <p>My Bets</p>
@@ -34,6 +36,8 @@ function MyBetsTable() {
                 </table>
             </body>
         </div>
+        </div>
+</div>
         </>
 
     );

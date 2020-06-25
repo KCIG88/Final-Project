@@ -43,7 +43,7 @@ apifootballcall: function(){
     },
 
     getEPLoddsapi: function () {
-        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=11e0c196eb033b5646943c2e6b522ddf&sport=soccer_epl&region=us&mkt=spreads");
+        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=e7aa1944bb262adc9b952509f18f94d6&sport=soccer_epl&region=us&mkt=spreads");
     },
 
     getLALIGAoddsapi: function () {
@@ -55,7 +55,7 @@ apifootballcall: function(){
     },
 
     getoddsapi: function () {
-        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=11e0c196eb033b5646943c2e6b522ddf&sport=soccer_epl&region=us&mkt=spreads");
+        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=e7aa1944bb262adc9b952509f18f94d6&sport=soccer_epl&region=us&mkt=spreads");
     },
 
     signUp: function (user) {
