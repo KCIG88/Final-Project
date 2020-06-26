@@ -30,15 +30,15 @@ class LALIGATable extends Component {
       <>
       <div class="container is-fluid">
   <div class="notification">
-        <h1 id="ligabanner">LA Liga Games</h1>
+        <h1 id="ligabanner">LA Liga Games</h1> <br></br>
         <table class="table">
           <thead>
             <tr>
               <th>Date</th>
               <th>Home Team</th>
               <th>Away Team</th>
-              <th>Home Team Line</th>
-              <th>Home Team Win</th>
+              <th>Home Team Spread Line</th>
+              <th>Home Team Odds</th>
               <th>Bet on this game</th>
             </tr>
           </thead>
@@ -48,9 +48,9 @@ class LALIGATable extends Component {
               return (<tr>
                 <td>{data.commence_time}</td>
               <td>{data.home_team}</td>
-              <td>{data.teams[0]}</td>
-              <td></td>
-              <td></td>
+              <td>{data.teams[1]}</td>
+              <td>{data.sites[0].odds.spreads.points[0]}</td>
+              <td>{data.sites[0].odds.spreads.odds[0]}</td>
               <td><button>Place a Bet</button></td>
 
               </tr>

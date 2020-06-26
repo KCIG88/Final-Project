@@ -32,8 +32,8 @@ class MLBTable extends Component {
   <div class="notification">
         <header>
         <h1 id="MLBbanner" >MLB Games 
-        <img id="MLB-logo" src="https://a4.espncdn.com/combiner/i?img=%2Fi%2Fespn%2Fmisc_logos%2F500%2Fmlb.png" width="112" height="28" align="center"></img></h1>
-        </header>
+        <img id="MLB-logo" alt="mlblogo" src="https://a4.espncdn.com/combiner/i?img=%2Fi%2Fespn%2Fmisc_logos%2F500%2Fmlb.png" width="112" height="28" align="center"></img></h1>
+        </header> <br></br>
         <table class="table">
           <thead>
             <tr>
@@ -51,9 +51,9 @@ class MLBTable extends Component {
               return (<tr>
                 <td>{data.commence_time}</td>
               <td>{data.home_team}</td>
-              <td>{data.teams[0]}</td>
-              <td></td>
-              <td></td>
+              <td>{data.teams[1]}</td>
+              <td>{data.sites[0].odds.spreads.odds[0]}</td>
+              <td>{data.sites[0].odds.spreads.points[0]}</td>
               <td><button>Place a Bet</button></td>
 
               </tr>
