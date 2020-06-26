@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 
-import "../../styles/MyBetsTable.css";
+import "../../styles/mlbtable.css";
 
 class MLBTable extends Component {
 
@@ -30,8 +30,10 @@ class MLBTable extends Component {
       <>
         <div class="container is-fluid">
   <div class="notification">
-        <h1>MLB Games</h1>
-        <h1>No Results at this moment</h1>
+        <header>
+        <h1 id="MLBbanner" >MLB Games 
+        <img id="MLB-logo" src="https://a4.espncdn.com/combiner/i?img=%2Fi%2Fespn%2Fmisc_logos%2F500%2Fmlb.png" width="112" height="28" align="center"></img></h1>
+        </header>
         <table class="table">
           <thead>
             <tr>
