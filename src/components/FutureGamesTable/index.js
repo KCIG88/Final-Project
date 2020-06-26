@@ -37,7 +37,7 @@ class FutureGamesTables extends Component {
       <>
       <div class="container is-fluid">
   <div class="notification">
-        <h1>Future Games</h1>
+        <h1>Upcoming Games</h1>
         <table class="table">
           <thead>
             <tr>

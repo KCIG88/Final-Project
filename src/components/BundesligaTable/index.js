@@ -30,7 +30,10 @@ class BundesligaTable extends Component {
       <>
          <div class="container is-fluid">
   <div class="notification">
-        <h1 id="bundesligabanner">Bundesliga Soccer Games</h1>
+  <header>
+        <h1 id="GERMbanner" >Bundesliga Soccer Games 
+        <img id="GERM-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/2._Bundesliga_logo.svg/1200px-2._Bundesliga_logo.svg.png" width="112" height="28" align="center" alt="germlogo"></img></h1>
+        </header>
         <table class="table">
           <thead>
             <tr>

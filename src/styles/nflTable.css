@@ -1,11 +1,11 @@
 
 /* Available Games to bet on CSS */
-#GERMbanner {
+#NFLbanner {
     color: white;
     padding: 1.5vh 0;
     font-size: 60px;
-    background-image: url("../images/mlb-logo-bg.jpeg");
-    background-size: cover;
+    background-image: url("../images/NFL-logo-bg.jpeg");
+    background-size:cover;
   }
 
 
@@ -22,7 +22,7 @@
     th {
       height: 50px;
       background-color: black;
-     
+      color: green;
       font-size: 25px;
       
     }

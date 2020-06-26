@@ -30,11 +30,10 @@ class NCAATable extends Component {
       <>
         <div class="container is-fluid">
   <div class="notification">
-        <h1 id="NCAAbanner">Top Picked NCAA Football Games</h1>
-        <a class="navbar-item" href="https://www.ncaa.com">
-            <img id="logo" src="../images/ncaalogo.jpeg" justify-fit="center" alt="" />
-        </a>
-        <image id="ncaalogo" src="../images/ncaalogo.jpeg"></image>
+  <header>
+        <h1 id="NFLbanner" >Top College Football games 2020-2021 Season
+        <img id="Nfl-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/NCAA_logo.svg/1042px-NCAA_logo.svg.png" width="112" height="28" align="center" alt="ncaalogo"></img></h1>
+        </header>
         <table class="table">
           <thead>
             <tr>
