@@ -32,12 +32,12 @@ class NflTable extends Component {
           <div class="notification">
           <header>
         <h1 id="NFLbanner" >Week 1-16 NFL Games
-        <img id="Nfl-logo" src="https://lh3.googleusercontent.com/proxy/WO73IvFAEJrkyPZG5FqdB-Jx9mwxIk-96iAAiISnE7Lc_-YoLbaFb9cLjbn6m8EyTjUX-DYMyXpE-rpec-UuVuewwYsyLoTCr34ycHwfiR3CorxnzaSn3Bya" width="112" height="28" align="center" alt="nfllogo"></img></h1>
-        </header>
+        <img id="Nfl-logo" src="https://lh3.googleusercontent.com/proxy/Ek_wc3KYtvkXwVtUSccJDAsz2HxvoDu6MXyo6fyo9RZNw2fUtfg_mUSKYsjwTiccNPDRpyznrYxdQV6L9dKXjCRxwVzj7HBL2mRnJsJK8dK8K2_9LIKoN__A" width="112" height="28" align="center" alt="nfllogo"></img></h1>
+        </header> <br></br>
         <table class="table">
           <thead>
             <tr>
-              <th>Date</th>
+            <th>Date</th>
               <th>Home Team</th>
               <th>Away Team</th>
               <th>Home Team Line</th>
@@ -50,10 +50,10 @@ class NflTable extends Component {
             {results.map(data => {
               return (<tr>
                 <td>{data.commence_time}</td>
-              <td>{data.home_team}</td>
               <td>{data.teams[0]}</td>
-              <td></td>
-              <td></td>
+              <td>{data.teams[1]}</td>
+              <td>{-7.5}</td>
+              <td>{1.89}</td>
               <td><button>Place a Bet</button></td>
 
               </tr>

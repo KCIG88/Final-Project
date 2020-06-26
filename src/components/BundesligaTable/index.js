@@ -33,15 +33,15 @@ class BundesligaTable extends Component {
   <header>
         <h1 id="GERMbanner" >Bundesliga Soccer Games 
         <img id="GERM-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/2._Bundesliga_logo.svg/1200px-2._Bundesliga_logo.svg.png" width="112" height="28" align="center" alt="germlogo"></img></h1>
-        </header>
+        </header> <br></br>
         <table class="table">
           <thead>
             <tr>
               <th>Date</th>
               <th>Home Team</th>
               <th>Away Team</th>
-              <th>Home Team Line</th>
-              <th>Home Team Win</th>
+              <th>Home Team Spread Line</th>
+              <th>Home Team Odds</th>
               <th>Bet on this game</th>
             </tr>
           </thead>
@@ -49,11 +49,11 @@ class BundesligaTable extends Component {
           <tbody>
             {results.map(data => {
               return (<tr>
-                <td>{data.commence_time}</td>
+               <td>{data.commence_time}</td>
               <td>{data.home_team}</td>
-              <td>{data.teams[0]}</td>
-              <td></td>
-              <td></td>
+              <td>{data.teams[1]}</td>
+              <td>{data.sites[0].odds.spreads.points[0]}</td>
+              <td>{data.sites[0].odds.spreads.odds[0]}</td>
               <td><button>Place a Bet</button></td>
 
               </tr>

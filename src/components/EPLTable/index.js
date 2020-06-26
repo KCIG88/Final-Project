@@ -32,7 +32,7 @@ class EPLTable extends Component {
   <div class="notification">
 
 
-        <h1 id="eplbanner">English Premier League Games</h1>
+        <h1 id="eplbanner">English Premier League Games</h1> <br></br>
         <table class="table">
           <thead>
             <tr>

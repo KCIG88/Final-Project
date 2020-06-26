@@ -32,8 +32,8 @@ class NCAATable extends Component {
   <div class="notification">
   <header>
         <h1 id="NFLbanner" >Top College Football games 2020-2021 Season
-        <img id="Nfl-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/NCAA_logo.svg/1042px-NCAA_logo.svg.png" width="112" height="28" align="center" alt="ncaalogo"></img></h1>
-        </header>
+        <img id="Nfl-logo"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/NCAA_logo.svg/1042px-NCAA_logo.svg.png" width="112" height="28" align="center" alt="ncaalogo"></img></h1>
+        </header> <br></br>
         <table class="table">
           <thead>
             <tr>
@@ -50,10 +50,10 @@ class NCAATable extends Component {
             {results.map(data => {
               return (<tr>
                 <td>{data.commence_time}</td>
-              <td>{data.home_team}</td>
               <td>{data.teams[0]}</td>
-              <td></td>
-              <td></td>
+              <td>{data.teams[1]}</td>
+              <td>{-7.5}</td>
+              <td>{1.89}</td>
               <td><button>Place a Bet</button></td>
 
               </tr>

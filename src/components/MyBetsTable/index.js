@@ -10,10 +10,11 @@ function MyBetsTable() {
 
         <>
         <div class="container is-fluid">
-  <div class="notification">
+        <div class="notification">
         <div>
-            <body>
-                <p>My Bets</p>
+            
+                <h1>My Bets</h1>
+                <br></br>
                 <table class="table">
                     <thead>
                         <tr>
@@ -26,15 +27,15 @@ function MyBetsTable() {
                         </tr>
                     </thead>
                     <tbody> <tr>
-                        <th>01/01/2020</th>
-                        <td>Leicester City </td>
-                        <td>Liverpool</td>
-                        <td>-1.5(-153)</td>
-                        <td>-200</td>
-                        <td><button>Place a Bet</button></td>
+                        <td>01/01/2020(Sample)</td>
+                        <td>Leicester City(SampleData) </td>
+                        <td>Liverpool(SampleData)</td>
+                        <td>-1.5(-153)(SampleData)</td>
+                        <td>-200(Sample)</td>
+                        <td><button class="button-is-hovered">Place a Bet</button></td>
                     </tr></tbody>
                 </table>
-            </body>
+            
         </div>
         </div>
 </div>

@@ -41,21 +41,7 @@
       background-color: #0e0b16;
     }
     
-    button {
-      border-radius: 15px;
-      padding: 10px;
-      background-color: green;
-      opacity: 0.8;
-      font-family: "Varela Round", "Comfortaa", sans-serif;
-      font-size: 0.8em;
-      color: white;
-    }
-    
-    button:focus,
-    button:hover {
-      background-color: #17f617;
-      opacity: 1;
-    }
+   
     
    
     
