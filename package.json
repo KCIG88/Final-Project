@@ -12,15 +12,19 @@
     "bootstrap": "^4.5.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "express-validator": "^6.5.0",
-    "mongoose": "^5.9.19",
+    "mongoose": "^5.9.20",
     "morgan": "^1.10.0",
+    "path": "^0.12.7",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-bulma-components": "^3.3.0",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "spectre.css": "^0.5.8"
   },
   "scripts": {
     "start": "react-scripts start",
