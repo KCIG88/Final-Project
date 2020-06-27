@@ -49,7 +49,7 @@ class BundesligaTable extends Component {
           <tbody>
             {results.map(data => {
               return (<tr>
-               <td>{data.commence_time}</td>
+              <td>{data.commence_time}</td>
               <td>{data.home_team}</td>
               <td>{data.teams[1]}</td>
               <td>{data.sites[0].odds.spreads.points[0]}</td>
