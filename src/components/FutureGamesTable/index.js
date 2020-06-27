@@ -29,54 +29,65 @@ class FutureGamesTables extends Component {
       .catch(err => console.log(err));
   };
 
-   
+
 
   render() {
     const { results } = this.state
     console.log(results)
-   // const { eventTime } = results.data.commence_time
-  //  console.log(eventTime) 
+  
+    const  GameDate  = results.map(data =>{
+      return (
+        data.commence_time
+      )
+    })
+    console.log(GameDate[0])
+    var  eventTime = new Date(GameDate[0]*1000)
+    console.log(eventTime)    
+    // var { GameTime } = eventTime
+    // console.log(GameTime)
+    //  console.log(eventTime) 
 
 
     return (
 
       <>
-      <div class="container is-fluid">
-      <div class="notification">
-        <h1>Upcoming Games</h1>
-        <br></br>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Home Team</th>
-              <th>Away Team</th>
-              <th>Home Team Spread Line</th>
-              <th>Home Team Odds</th>
-              <th>Bet on this game</th>
-            </tr>
-          </thead>
+        <div class="container is-fluid">
+          <div class="notification">
+            <h1>Upcoming Games</h1>
+            <br></br>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Home Team</th>
+                  <th>Away Team</th>
+                  <th>Home Team Spread Line</th>
+                  <th>Home Team Odds</th>
+                  <th>Bet on this game</th>
+                </tr>
+              </thead>
 
-          <tbody>
-            {results.map(data => {
-              return (<tr>
-                <td>{data.commence_time}</td>
-              <td>{data.home_team}</td>
-              <td>{data.teams[1]}</td>
-              <td>{data.sites[0].odds.spreads.points[0]}</td>
-              <td>{data.sites[0].odds.spreads.odds[0]}</td>
-              
-              <td><Link to="/placebet"><button>Place a Bet</button></Link></td>
-              </tr>
-            )})}
-           
+              <tbody>
+                {results.map(data => {
+                  return (<tr>
+                    <td value={/*`${eventTime}`*/}></td>
+                    <td>{data.home_team}</td>
+                    <td>{data.teams[1]}</td>
+                    <td>{data.sites[0].odds.spreads.points[0]}</td>
+                    <td>{data.sites[0].odds.spreads.odds[0]}</td>
+
+                    <td><Link to="/placebet"><button>Place a Bet</button></Link></td>
+                  </tr>
+                  )
+                })}
 
 
 
-          </tbody>
-        </table>
+
+              </tbody>
+            </table>
+          </div>
         </div>
-</div>
 
       </>
 
