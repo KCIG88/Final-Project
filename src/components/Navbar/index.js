@@ -1,73 +1,109 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { useAuth0 } from "../../react-auth0-spa"
+// import { useAuth0 } from "../../react-auth0-spa"
 
 import "../../styles/Navbar.css";
 
 
-function Navbar() {
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+class Navbar extends Component {
+  // const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
-  return (
+  logOut(e) {
+    e.preventDefault()
+    localStorage.removeItem('usertoken')
+    this.props.history.push('/')
+  }
 
-    <div>
+  render() {
 
+    const loginRegLink = (
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <Link className="nav-lin" to="/signin">
+            <strong>Sign In</strong>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/signup">
+            <strong>Register</strong>
+          </Link>
 
-
-
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand-is-dark">
-          <a class="navbar-item" href="/">
-            <img id="logo" src="https://lh3.googleusercontent.com/VtNJ-Oz764laDLxZctvodnze-tGcaNDwZsdlZVKg7dXe3nu4FGuKWIrpeCgAz1NP5jqX=s85" width="112" height="28" alt="" />
+        </li>
+      </ul>
+    )
+    const userLink = (
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <Link to="/profile" className="navLink">
+            <strong>Profile</strong>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <a href="" onClick={this.logOut.bind(this)} clasName="nav-link">
+            <strong>Logout</strong>
           </a>
-          <br></br>
-          
+        </li>
+      </ul>
+    )
 
-          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" alt="">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
 
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-            <Link class="navbar-item" to="/">
-              Home
+
+    return (
+
+      <div>
+        <nav className="navbar" role="navigation" aria-label="main navigation">
+          <div className="navbar-brand-is-dark">
+            <a className="navbar-item" href="/">
+              <img id="logo" src="https://lh3.googleusercontent.com/VtNJ-Oz764laDLxZctvodnze-tGcaNDwZsdlZVKg7dXe3nu4FGuKWIrpeCgAz1NP5jqX=s85" width="112" height="28" alt="" />
+            </a>
+            <br></br>
+            <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" alt="">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <div id="navbarBasicExample" className="navbar-menu">
+            <div className="navbar-start">
+              <Link className="nav-link" to="/">
+                Home
       </Link>
+              {localStorage.usertoken ? userLink : loginRegLink}
+            </div>
 
-            <Link class="navbar-item" to="/profile">
+            <Link className="navbar-item" to="/profile">
               Profile
       </Link>
 
-            <Link class="navbar-item" to="/AddBalance">
-            ADD FUNDS
+            <Link className="navbar-item" to="/AddBalance">
+              ADD FUNDS
       </Link>
 
 
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
+            <div className="navbar-item has-dropdown is-hoverable">
+              <a className="navbar-link">
                 Sports
               </a>
 
-              <div class="navbar-dropdown">
-                <Link class="navbar-item" to="/nfl">
+              <div className="navbar-dropdown">
+                <Link className="navbar-item" to="/nfl">
                   NFL
           </Link>
-                <Link class="navbar-item" to="/ncaa">
+                <Link className="navbar-item" to="/ncaa">
                   NCAA Football
           </Link>
-                <Link class="navbar-item" to="/mlb">
+                <Link className="navbar-item" to="/mlb">
                   MLB
           </Link>
-                <Link class="navbar-item" to="/epl">
+                <Link className="navbar-item" to="/epl">
                   EPL
           </Link>
-                <Link class="navbar-item" to="/laliga">
+                <Link className="navbar-item" to="/laliga">
                   La Liga
           </Link>
-                <Link class="navbar-item" to="/bundesliga">
+                <Link className="navbar-item" to="/bundesliga">
                   Bundesliga
           </Link>
 
@@ -75,29 +111,10 @@ function Navbar() {
             </div>
           </div>
 
-          {/* <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <Link class="button is-primary" to="/signup">
-                  <strong>Sign up</strong>
-                </Link>
-                <Link class="button is-dark" to="/signin">
-                  <strong>Sign In</strong>
-                </Link>
-              </div>
-            </div>
-          </div> */}
-        </div>
-        {!isAuthenticated && (
-            <button onClick={() => loginWithRedirect({})}>Log in</button>
-          )}
-
-          {isAuthenticated && <button onClick={() => logout()}>Log out</button>}
-      </nav>
-    </div>
-  );
-
-
-};
+        </nav>
+      </div >
+    )
+  };
+}
 
 export default Navbar;

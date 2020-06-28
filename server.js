@@ -1,16 +1,29 @@
 const express = require('express')
 // const path = require('path);')
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const mongoose = require('mongoose');
-// const mongoose = require('mongoose');
-const app = express()
-const PORT = process.env.port || 8080;
+var cors = require('cors');
+var bodyParser = require('body-parser');
 
-const routes = require("./routes/api")
+const PORT = process.env.port || 3000;
 
-const MONGODB_URI = 'mongodb+srv://auth0-custom-db-user:Hornet94@cluster0-oidde.mongodb.net/auth0-integration?retryWrites=true&w=majority'
 
-mongoose.connect(MONGODB_URI || 'mongodb://localhost/projec3', {
+
+
+
+
+const app = express();
+app.use(bodyParser.json())
+app.use(cors())
+app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(express.json());
+
+
+
+
+// const MONGODB_URI = 'mongodb+srv://auth0-custom-db-user:Hornet94@cluster0-oidde.mongodb.net/auth0-integration?retryWrites=true&w=majority'
+
+mongoose.connect('mongodb://localhost:27017/project3', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -19,23 +32,16 @@ mongoose.connection.on('connected', () => {
     console.log('Mongoose is connected!!!')
 });
 
+const users = require("./routes/Users.js")
+app.use('/users', users)
 
 // MIDDLEWARE
-app.use(morgan('tiny'));
-app.use('/api', routes);
-
-//routes
+// app.use(morgan('tiny'));
+// app.use('/', routes);
 
 
-// Sessions
-// app.use(
-//     session({
-//         secret: 'Project-three', //pick a random string to make the hash that is generated secure
-//         store: new MongoStore({ mongooseConnection: dbConnection }),
-//         resave: false, //required
-//         saveUninitialized: false //required
-//     })
-// )
+
+
 
 
 
