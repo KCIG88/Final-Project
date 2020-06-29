@@ -4,8 +4,27 @@ import "../../styles/BundesligaTable.css";
 
 class PlaceBetCard extends Component {
 
+  state={
+    Wager:0,
+    Prediction: 0
+  }
+
+
+  handleAmountChange = event => {
+    this.setState({ Wager: parseInt(event.target.value)});
+    };
+  
+  handlePredictionChange = event => {
+    this.setState({ Prediction: event.target.value});
+    };
 
   render() {
+
+    const { state, setState } = this.props
+    console.log(state)
+    const matchOdds = state.bet.sites[0].odds.spreads.odds[0]
+    console.log(this.state)
+    
     return (
 
       <>
@@ -23,32 +42,32 @@ class PlaceBetCard extends Component {
                   <hr />
 
                   <h3>
-                    <span>Home team:</span> {}
+                    <span>Home team:</span> {state.bet.teams[0]}
                   </h3>
                   <h3>
-                    <span>Away team:</span> {}
+                    <span>Away team:</span> {state.bet.teams[1]}
                   </h3>
 
                   <div className="betWager">
                     <h4>Select a wager:</h4>
                     <div className="betWagerBtn">
-                      <button type="button" value="50" onClick={""}>
+                      <button type="button" value="50" onClick={this.handleAmountChange} >
                         $50
                   </button>
-                      <button type="button" value="100" onClick={""}>
+                      <button type="button" value="100" onClick={this.handleAmountChange}>
                         $100
                   </button>
-                      <button type="button" value="250" onClick={""}>
+                      <button type="button" value="250"  onClick={this.handleAmountChange}>
                         $250
                   </button>
-                      <button type="button" value="500" onClick={""}>
+                      <button type="button" value="500" onClick={this.handleAmountChange} >
                         $500
                   </button>
                       <input
                         id="wagerInput"
                         type="text"
                         placeholder="Enter Amount $"
-                        onChange={""}
+                        onChange={this.handleAmountChange}
                       />
                     </div>
                   </div>
@@ -57,48 +76,13 @@ class PlaceBetCard extends Component {
                   <div className="betOutcome">
                     <h4>Select a outcome:</h4>
                     <div className="betOutcomeBtn">
-                      <button
-                        type="button"
-                        name="Home Win"
-                        value="one"
-                        onClick={""}
-                      >
-                        Home win
-                  </button>
 
-                      <button
-                        type="button"
-                        name="Away Win"
-                        value="two"
-                        onClick={""}
-                      >
-                        Away Win
-                  </button>
-                      <button
-                        type="button"
-                        name="Draw"
-                        value="draw"
-                        onClick={""}
-                      >
-                        Draw
-                  </button>
-
-                      <button
-                        type="button"
-                        name="Home Win or Draw"
-                        value="oneDraw"
-                        onClick={""}
-                      >
-                        Home Spread
-                  </button>
-                      <button
-                        type="button"
-                        name="Away Win or Draw"
-                        value="twoDraw"
-                        onClick={""}
-                      >
-                        Away Spread
-                  </button>
+                      <button type="button" name="Home Spread" onClick={this.handlePredictionChange} value={state.bet.sites[0].odds.spreads.points[0]} > Home Spread
+                      </button>
+                     
+                      <button type="button" name="Away Spread" onClick={this.handlePredictionChange} value={state.bet.sites[0].odds.spreads.points[1]} > Away Spread
+                      </button>
+                   
                     </div>
                   </div>
 
@@ -116,7 +100,10 @@ class PlaceBetCard extends Component {
                         </tr>
                       </thead>
                       <tbody>
-
+                        <td>{this.state.Prediction} </td>
+                        <td> {matchOdds} </td>
+                        <td> {this.state.Wager} </td>
+                        <td> ${matchOdds * this.state.Wager} </td>
                       </tbody>
                     </table>
                   </div>

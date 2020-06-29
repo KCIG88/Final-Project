@@ -1,16 +1,19 @@
 import React from "react";
 import PlaceBetCard from "../components/PlaceBetCard"
+//import { useHistory } from 'react-router-dom'
 
 
 
-
-function PlaceBet() {
-
+function PlaceBet(props) {
+console.log(props)
+  const {state, setState} = props
+  //const history = useHsitory();
+  ///
 
   return (
   
 <>
-< PlaceBetCard/>
+< PlaceBetCard setState={setState} state={state}/>
 </>
      
   );

@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+
+import React, { Component }, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import Navbar from "./components/Navbar/index"
@@ -17,6 +18,7 @@ import LALIGA from "./pages/LALIGA";
 import BUNDESLIGA from "./pages/BUNDESLIGA";
 import AddBalance from "./pages/AddBalance";
 import PlaceBet from './pages/PlaceBet';
+
 
 class App extends Component {
   render() {
@@ -74,6 +76,7 @@ class App extends Component {
 
     );
   }
+
 }
 export default App;
 
