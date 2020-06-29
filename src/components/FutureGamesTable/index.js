@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React, { Component} from "react";
+
 import API from "../../utils/API";
-import { Link } from "react-router-dom";
 import "../../styles/FutureGamesTable.css";
+//import { useHistory } from 'react-router-dom'
 
 class FutureGamesTables extends Component {
 
@@ -12,6 +13,10 @@ class FutureGamesTables extends Component {
 
   componentDidMount() {
     this.getsocceroddsapi();
+  }
+
+  handleBet(){
+    
   }
 
 
@@ -34,19 +39,17 @@ class FutureGamesTables extends Component {
   render() {
     const { results } = this.state
     console.log(results)
-  
-    const  GameDate  = results.map(data =>{
-      return (
-        data.commence_time
-      )
-    })
-    console.log(GameDate[0])
-    var  eventTime = new Date(GameDate[0]*1000)
-    console.log(eventTime)    
-    // var { GameTime } = eventTime
-    // console.log(GameTime)
-    //  console.log(eventTime) 
 
+    const {state, setState, history} =this.props
+
+    console.log(this.props.state)
+    const eventTime = results.map(data => {
+      return { ...data, commence_time: new Date(data.commence_time * 1000).toString() }
+    })
+
+    console.log(eventTime)
+
+    console.log(this.props)
 
     return (
 
@@ -68,15 +71,20 @@ class FutureGamesTables extends Component {
               </thead>
 
               <tbody>
-                {results.map(data => {
+                {eventTime.map(data => {
                   return (<tr>
-                    <td value={/*`${eventTime}`*/}></td>
+                    <td >{data.commence_time}</td>
                     <td>{data.home_team}</td>
                     <td>{data.teams[1]}</td>
                     <td>{data.sites[0].odds.spreads.points[0]}</td>
                     <td>{data.sites[0].odds.spreads.odds[0]}</td>
 
-                    <td><Link to="/placebet"><button>Place a Bet</button></Link></td>
+                    <td> <button onClick={ () => { 
+                      setState({...state, bet: data})
+                      //move to seperate page
+                      history.push('/placebet')
+                    }
+                      }>Place a Bet</button></td>
                   </tr>
                   )
                 })}

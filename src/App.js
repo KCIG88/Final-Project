@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import Navbar from "./components/Navbar/index"
@@ -19,6 +19,11 @@ import AddBalance from "./pages/AddBalance";
 import PlaceBet from './pages/PlaceBet';
 
 function App() {
+
+    const [state, setState]=useState({
+      bet: {}
+    })
+
 
   const { loading } = useAuth0();
 
@@ -45,7 +50,7 @@ function App() {
             </Route>
 
             <Route exact path={["/placebet"]}>
-              <PlaceBet />
+              <PlaceBet setState={setState} state={state} />
             </Route>
 
             <Route exact path={["/nfl"]}>
@@ -81,7 +86,7 @@ function App() {
             </Route>
 
             <Route exact path={["/", "/home"]}>
-              <Dashboard />
+              <Dashboard setState={setState} state={state}/>
             </Route>
 
           </Switch>
