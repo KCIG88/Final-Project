@@ -1,5 +1,5 @@
 
-import React, { Component }, { useState } from 'react';
+import React, { Component, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import Navbar from "./components/Navbar/index"
@@ -20,8 +20,11 @@ import AddBalance from "./pages/AddBalance";
 import PlaceBet from './pages/PlaceBet';
 
 
-class App extends Component {
-  render() {
+function App() {
+
+  
+    const [state, setState] = useState({bet:{}})
+    console.log(state)
     return (
       <div className="App">
         <Router>
@@ -37,7 +40,7 @@ class App extends Component {
                 <AddBalance />
               </Route>
               <Route exact path={["/placebet"]}>
-                <PlaceBet />
+                <PlaceBet setState={setState} state={state} />
               </Route>
               <Route exact path={["/nfl"]}>
                 <NFL />
@@ -65,7 +68,7 @@ class App extends Component {
               </Route>
 
               <Route exact path={["/", "/home"]}>
-                <Dashboard />
+                <Dashboard setState={setState} state={state}/>
               </Route>
 
             </Switch>
@@ -74,9 +77,9 @@ class App extends Component {
         </Router >
       </div>
 
-    );
+     ) ;
   }
 
-}
+
 export default App;
 
