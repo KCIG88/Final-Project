@@ -1,137 +1,86 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
-import API from "../utils/API.js";
-import { authenticate, isAuthenticated } from "../utils/auth.js";
+import React, { Component } from "react";
+// import { Redirect } from "react-router-dom";
+// import API from "../utils/API.js";
+// import { authenticate, isAuthenticated } from "../utils/auth.js";
 import AuthForm from "../components/AuthForm";
 import AuthInputField from "../components/AuthForm/AuthInputField";
 import SubmitBtn from "../components/Form/SubmitBtn";
-import HelpText from "../components/Form/HelpText";
+// import HelpText from "../components/Form/HelpText";
 import LinkBtn from "../components/LinkBtn";
+import { register } from "../components/UserFunctons/UserFunctions"
 
-function SignUp() {
-  const [values, setValues] = useState({
-    name: "",
-    email: "",
-    password: "",
-    error: "",
-    success: false,
-    redirectToSignIn: false,
-  });
-
-  const handleInputChange = (name) => (event) => {
-    setValues({ ...values, error: false, [name]: event.target.value });
-  };
-
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    setValues({ ...values, error: false });
-    API.signUp({
-      name: values.name,
-      email: values.email,
-      password: values.password,
-    })
-      .then((res) => {
-        if (res.error) {
-          setValues({ ...values, error: res.error, success: false });
-        } else {
-          API.signIn({
-            email: values.email,
-            password: values.password,
-          })
-            .then((res) => {
-              if (res.error) {
-                setValues({ ...values, error: res.error });
-              } else {
-                authenticate(res.data, () => {
-                  setValues({
-                    ...values,
-                    redirectToSignIn: true,
-                  });
-                });
-              }
-            })
-            .catch((err) => {
-              setValues({
-                ...values,
-                error: err.response.data.error,
-                success: false,
-              });
-            });
-        }
-      })
-      .catch((err) => {
-        if (
-          err.response.data.err ===
-          "11000 duplicate key error collection: dragonsden.users index: email already exists; must be unique"
-        ) {
-          setValues({
-            ...values,
-            error: "This email address already has an account",
-            success: false,
-          });
-        } else {
-          setValues({
-            ...values,
-            error: err.response.data.error,
-            success: false,
-          });
-        }
-      });
-  };
-
-  const { user } = isAuthenticated();
-
-  const redirectUser = () => {
-    if (values.redirectToSignIn) {
-      //redirect user appropriately after login
-      if (user && user.role === "Admin") {
-        return <Redirect to="/admin" />;
-      } else {
-        return <Redirect to="/account" />;
-      }
+class SignUp extends Component {
+  constructor() {
+    super()
+    this.state = {
+      email: '',
+      password: '',
+      userName: '',
     }
-  };
+    this.onChange = this.onChange.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
+  }
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+  onSubmit(e) {
+    e.preventDefault()
+    const user = {
+      email: this.state.email,
+      password: this.state.password,
+      userName: this.state.userName,
+    }
+    register(user).then(res => {
+      if (res) {
+        this.props.history.push('/login')
+      }
+    })
+  }
+  render() {
+    return (
+      <>
+        <AuthForm title="SIGN UP">
+          <AuthInputField
+            name="email"
+            label="Email Address:"
+            type="email"
+            placeholder="Email"
+            onChange={this.onChange}
+            value={this.state.email}
+            icon="fas fa-envelope"
+          />
+          <AuthInputField
+            name="password"
+            label="Password:"
+            type="password"
+            placeholder="Password"
+            onChange={this.onChange}
+            value={this.state.password}
+            icon="fas fa-lock"
+          />
+          <AuthInputField
+            name="username"
+            label="Username:"
+            type="username"
+            placeholder="Username"
+            onChange={this.onChange}
+            value={this.state.userName}
+            icon="fas fa-lock"
+          />
+          <SubmitBtn onSubmit={this.onSubmit}>SUBMIT</SubmitBtn>
+          <LinkBtn route="/signIn">CREATE AN ACCOUNT</LinkBtn>
+        </AuthForm>
+        {/* {redirectUser()} */}
+      </>
 
-  return (
-    <>
-      <AuthForm title="SIGN UP">
-        <AuthInputField
-          name="email"
-          label="Email Address:"
-          type="email"
-          placeholder="Email"
-          onChange={handleInputChange}
-          value={values.email}
-          icon="fas fa-envelope"
-        />
-        <AuthInputField
-          name="name"
-          label="Name:"
-          type="text"
-          placeholder="Name"
-          onChange={handleInputChange}
-          value={values.name}
-          icon="fas fa-user"
-        />
-        <AuthInputField
-          name="password"
-          label="Password:"
-          type="password"
-          placeholder="Password"
-          onChange={handleInputChange}
-          value={values.password}
-          icon="fas fa-lock"
-        />
-        <SubmitBtn onSubmit={handleFormSubmit}>SUBMIT</SubmitBtn>
-        <HelpText toggle={values.error} textSize="5" color="is-danger">
-          {values.error}
-        </HelpText>
-        <hr />
-        <LinkBtn route="/signin">USE EXISTING ACCOUNT</LinkBtn>
-      </AuthForm>
-      {redirectUser()}
-    </>
-  );
+
+
+
+
+
+    );
+  }
 }
+
 
 export default SignUp;
