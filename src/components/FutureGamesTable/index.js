@@ -40,7 +40,7 @@ class FutureGamesTables extends Component {
     const { results } = this.state
     console.log(results)
 
-    const {state, setState, history} =this.props
+    const {state, setState, history} = this.props
 
     console.log(this.props.state)
     const eventTime = results.map(data => {
