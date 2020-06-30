@@ -20,12 +20,6 @@ class FutureGamesTables extends Component {
   }
 
 
-  // getgamesbyleague = (props) => {
-  //   API.getnext15gamesbyleague(props)
-  //     .then(res => this.setState({ results: res }))
-  //     .then(res => { console.log(res) })
-  //     .catch(err => console.log(err));
-  // };
 
   getsocceroddsapi = () => {
     API.getoddsapi()

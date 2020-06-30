@@ -21,6 +21,7 @@ class SignIn extends Component {
     this.onChange = this.onChange.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
   }
+  
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value })
     console.log(e.target)
@@ -36,12 +37,14 @@ class SignIn extends Component {
       console.log(res)
       if (res) {
         window.localStorage.setItem("token", res.data)
-        // this.props.history.push('/profile')
+        
       }
     })
       .catch(console.log)
   }
+  
   render() {
+    const {history}=this.props
     return (
       <>
         <AuthForm title="SIGN IN">
@@ -63,7 +66,7 @@ class SignIn extends Component {
             value={this.state.password}
             icon="fas fa-lock"
           />
-          <SubmitBtn onSubmit={this.onSubmit}>SUBMIT</SubmitBtn>
+          <SubmitBtn onSubmit={{ handleSubmit(){history.push('/profile')}}}>SUBMIT</SubmitBtn>
           <LinkBtn route="/signup">CREATE AN ACCOUNT</LinkBtn>
         </AuthForm>
         {/* {redirectUser()} */}

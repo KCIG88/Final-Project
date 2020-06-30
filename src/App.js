@@ -23,21 +23,21 @@ import PlaceBet from './pages/PlaceBet';
 function App() {
 
   
-    const [state, setState] = useState({bet:{}})
+    const [state, setState] = useState({bet:{}}, {balance:{}})
     console.log(state)
     return (
       <div className="App">
         <Router>
           <div>
             <header>
-              <Navbar />
+              <Navbar  />
             </header>
             <Switch>
               <Route exact path={["/profile"]}>
-                <Profile />
+                <Profile setState={setState} state={state} />
               </Route>
               <Route exact path={["/addbalance"]}>
-                <AddBalance />
+                <AddBalance setState={setState} state={state} />
               </Route>
               <Route exact path={["/placebet"]}>
                 <PlaceBet setState={setState} state={state} />

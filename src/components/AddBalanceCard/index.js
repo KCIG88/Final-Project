@@ -4,7 +4,10 @@ import React, { Component } from "react";
 
 class AddBalanceCard extends Component {
 
-  state = {  amount: 0  }
+  state = {  
+    amount: 0,
+    balance: 0
+    }
 
 
 handleAmountChange = event => {
@@ -13,15 +16,11 @@ handleAmountChange = event => {
 };
 
 handleSubmit = event => {
-
   event.preventDefault();
-
   if (this.state.amount > 0) {
-
-
-
+    this.setState({ balance: parseInt(event.target.value) });
+    console.log("submit")
   } else {
-  
     alert("Please select an amount to add to your account.");
   }
 };
@@ -29,6 +28,7 @@ handleSubmit = event => {
 
 render() {
   console.log(this.state);
+  const { state, setState } = this.props
   return (
 
     <>
@@ -65,9 +65,11 @@ render() {
               </div>
 
 
-              <div class="field is-grouped">
+              <div class="field is-grouped">  
                 <div class="control">
-                  <button class="button is-link">Submit</button>
+                  <button class="button is-link" 
+                  //use future card as reference and use state on app pages
+                  onSubmit={this.handleSubmit} >Submit</button>
                 </div>
                 <div class="control"></div>
                 <button class="button is-link is-light">Cancel</button>

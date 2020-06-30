@@ -1,20 +1,24 @@
 .navbar{
   background: black;
-  color: white;
+
 
 }
 
-.navbar-item{
+#navlink{
   color: white;
 }
 
-.navbar-dropdown{
-  color: white;
+.navbar-link{
+color: white;
 }
-.button{
+
+/* .navbar-dropdown{
+  color: black;
+} */
+/* .button{
   
   color: white;
-}
+} */
 
 #logo{
   width:auto ;

@@ -28,8 +28,8 @@ function MyBetsTable() {
                     </thead>
                     <tbody> <tr>
                         <td>01/01/2020(Sample)</td>
-                        <td>Leicester City(SampleData) </td>
-                        <td>Liverpool(SampleData)</td>
+                        <td>Leicester City </td>
+                        <td>Liverpool</td>
                         <td>-1.5(-153)(SampleData)</td>
                         <td>-200(Sample)</td>
                         <td><button class="button-is-hovered">Place a Bet</button></td>
