@@ -2,7 +2,7 @@ import React from "react";
 
 function AuthInputField(props) {
 
-  const { label, type, placeholder, icon } = props;
+  const { label, type, placeholder, icon, onChange, name, value } = props;
 
   return (
     <div className="field">
@@ -12,8 +12,9 @@ function AuthInputField(props) {
           className="input is-radiusless"
           type={type}
           placeholder={placeholder}
-        // onChange={}
-        // value={value}
+          onChange={onChange}
+          value={value}
+          name={name}
         />
         <span className="icon is-small is-left">
           <i className={icon}></i>

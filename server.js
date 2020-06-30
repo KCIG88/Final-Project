@@ -1,11 +1,11 @@
 const express = require('express')
 // const path = require('path);')
-// const morgan = require('morgan');
+const morgan = require('morgan');
 const mongoose = require('mongoose');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 
-const PORT = process.env.port || 3000;
+const PORT = process.env.port || 8080;
 
 
 
@@ -16,7 +16,7 @@ const app = express();
 app.use(bodyParser.json())
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(express.json());
+app.use(express.json());
 
 
 
@@ -36,7 +36,7 @@ const users = require("./routes/Users.js")
 app.use('/users', users)
 
 // MIDDLEWARE
-// app.use(morgan('tiny'));
+app.use(morgan('tiny'));
 // app.use('/', routes);
 
 

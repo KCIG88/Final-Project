@@ -10,14 +10,13 @@ users.use(cors())
 process.env.SECRET_KEY = 'secret'
 
 users.post('/register', (req, res) => {
-  const today = new Date()
   const userData = {
     userName: req.body.userName,
     email: req.body.email,
     password: req.body.password,
     balance: req.body.balance,
-    created: today
   }
+
   User.findOne({
     email: req.body.email
   })
@@ -41,10 +40,12 @@ users.post('/register', (req, res) => {
 })
 
 users.post('/login', (req, res) => {
+  console.log(req.body)
   User.findOne({
     email: req.body.email
   })
     .then(user => {
+      console.log(user)
       if (user) {
         if (bcrypt.compareSync(req.body.password, user.password)) {
           const payload = {
@@ -54,11 +55,11 @@ users.post('/login', (req, res) => {
             balance: user.balance
           }
           let token = jwt.sign(payload, process.env.SECRET_KEY, {
-            expiresIn: 1440
+            expiresIn: "1h"
           })
-          res.send(token)
+          res.json(token)
         } else {
-          res.json({ error: "User does not exist" })
+          res.json({ error: "Incorrect Password" })
         }
       } else {
         res.json({ error: "User does not exist" })
@@ -72,7 +73,7 @@ users.post('/login', (req, res) => {
 users.get('/profile', (req, res) => {
   var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
   User.findOne({
-    _id: decoded._id
+    _id: decoded.users._id
   })
     .then(user => {
       if (user) {
