@@ -1,8 +1,16 @@
 .navbar{
   background: black;
   color: white;
+
 }
 
+.navbar-item{
+  color: white;
+}
+
+.navbar-dropdown{
+  color: white;
+}
 .button{
   
   color: white;

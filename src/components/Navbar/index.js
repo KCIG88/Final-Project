@@ -68,23 +68,31 @@ class Navbar extends Component {
           <div id="navbarBasicExample" className="navbar-menu">
             <div className="navbar-start">
               <Link className="nav-link" to="/">
-                Home
-      </Link>
+                <strong>Home</strong>
+                <span class="icon">
+                  <i class="fas fa-home"></i>
+                </span>
+              </Link>
               {localStorage.usertoken ? userLink : loginRegLink}
             </div>
 
             <Link className="navbar-item" to="/profile">
-              Profile
-      </Link>
+              <strong>Profile</strong>
+              <span><i class="fa fa-user fa-fw"></i></span>
+            </Link>
 
             <Link className="navbar-item" to="/AddBalance">
-              ADD FUNDS
-      </Link>
+              <strong>ADD FUNDS </strong>
+              <span class="icon">
+              <i class="fa fa-credit-card" aria-hidden="true"></i>
+              </span>
+            </Link>
 
 
             <div className="navbar-item has-dropdown is-hoverable">
               <a className="navbar-link">
-                Sports
+                <strong>Sports</strong>
+                <span><i class="fa fa-trophy" aria-hidden="true"></i></span>
               </a>
 
               <div className="navbar-dropdown">
@@ -114,6 +122,7 @@ class Navbar extends Component {
         </nav>
       </div >
     )
+
   };
 }
 
