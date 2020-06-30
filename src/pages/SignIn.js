@@ -15,6 +15,7 @@ class SignIn extends Component {
     this.state = {
       email: '',
       password: '',
+      userName: ''
 
     }
     this.onChange = this.onChange.bind(this)
@@ -22,6 +23,7 @@ class SignIn extends Component {
   }
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value })
+    console.log(e.target)
   }
   onSubmit(e) {
     e.preventDefault()
@@ -31,10 +33,13 @@ class SignIn extends Component {
       userName: this.state.userName,
     }
     login(user).then(res => {
+      console.log(res)
       if (res) {
-        this.props.history.push('/profile')
+        window.localStorage.setItem("token", res.data)
+        // this.props.history.push('/profile')
       }
     })
+      .catch(console.log)
   }
   render() {
     return (

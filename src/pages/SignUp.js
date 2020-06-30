@@ -34,6 +34,8 @@ class SignUp extends Component {
       if (res) {
         this.props.history.push('/login')
       }
+    }).catch(res => {
+      console.log(res)
     })
   }
   render() {

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../styles/Profile.css";
 // import { useAuth0 } from "../react-auth0-spa";
 // import Axios from "axios";
-// import jwt_decode from 'jwt-decode'
+import jwt_decode from 'jwt-decode'
 
 
 
@@ -12,30 +12,37 @@ class Profile extends Component {
         this.state = {
             email: "",
             username: "",
-            balance: ""
+            balance: "",
 
         }
     }
 
     componentDidMount() {
-        // const token = localStorage.usertoken
-        // const decoded = jwt_decode(token)
-        this.setState({
-            email: this.state.email,
-            userName: this.state.userName,
-            balance: this.state.balance
-        })
+        const token = localStorage.getItem("token")
+        const decoded = jwt_decode(token)
+        console.log(decoded.email)
+        console.log(token)
 
+        this.setState({
+            email: decoded.email,
+            userName: decoded.userName,
+            balance: decoded.balance,
+            if(token) {
+                jwt_decode(token);
+            }
+        })
     }
+
+
     render() {
         return (
             <body>
                 {/* <img src='https://avatars0.githubusercontent.com/u/58921765?v=4' class="rounded-circle" alt="" id='profileImg'></img> */}
                 < div class="container is-fluid" >
                     <div class="jumbotron text-center shadow p-3 mb-5 bg-light rounded">
-                        <h1>Username:{this.state.userName}</h1>
-                        <h1>Email:{this.state.email}</h1>
-                        <h1>Available Funds:{this.state.balance}</h1>
+                        <h1>Username: {this.state.userName}</h1>
+                        <h1>Email: {this.state.email}</h1>
+                        <h1>Available Funds: $ {this.state.balance}</h1>
                         <button>Add Funds</button>
                     </div>
                 </div >
