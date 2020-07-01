@@ -8,6 +8,7 @@ import SubmitBtn from "../components/Form/SubmitBtn";
 // import HelpText from "../components/Form/HelpText";
 import LinkBtn from "../components/LinkBtn";
 import { login } from "../components/UserFunctons/UserFunctions.js";
+import { withRouter } from "react-router-dom"
 
 class SignIn extends Component {
   constructor() {
@@ -36,7 +37,7 @@ class SignIn extends Component {
       console.log(res)
       if (res) {
         window.localStorage.setItem("token", res.data)
-        // this.props.history.push('/profile')
+        this.props.history.push('/profile')
       }
     })
       .catch(console.log)
@@ -78,4 +79,4 @@ class SignIn extends Component {
   }
 }
 
-export default SignIn;
+export default withRouter(SignIn);
