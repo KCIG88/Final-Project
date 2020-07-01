@@ -14,6 +14,7 @@ class Navbar extends Component {
 
     }
   }
+
   componentDidMount() {
     const token = localStorage.getItem("token")
     const decoded = jwt_decode(token)
