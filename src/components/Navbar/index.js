@@ -45,13 +45,13 @@ class Navbar extends Component {
       <>
 
         <Link className="navbar-item" id="navbarLeft" to="/signin">
-          Sign In
+          <strong>Sign In</strong>
         </Link>
 
 
 
         <Link className="navbar-item" id="navbarLeft" to="/signup">
-          Register
+          <strong>Register</strong>
         </Link>
 
 
@@ -96,7 +96,7 @@ class Navbar extends Component {
             {/* Home */}
               <Link className="navbar-item" id="navbarLeft" to="/">
                 Home
-                <span class="icon"><i class="fas fa-home"></i></span>
+                <span class="icon"><i class="fas fa-home" id="navbarLeft"></i></span>
               </Link>
 
             {/* SignIn/LogOut */}
@@ -108,23 +108,22 @@ class Navbar extends Component {
 
             <div class="navbar-end">
               {/* Profile */}
-              <Link className="navbar-item" id="navlink" to="/profile">
-                <strong>Profile</strong>
+              <Link className="navbar-item" id="navbarRight" to="/profile">
+                <strong id="navbarRight">Profile</strong>
                 <span><i class="fa fa-user fa-fw" id="navbarRight" style={{ color: "white" }}></i></span>
               </Link>
 
               {/* Poker Chip */}
               <a class="navbar-item" style={{ color: "white" }}>
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/casino-royale-9c472.appspot.com/o/gaming.svg?alt=media&token=3058a860-e55f-4cbb-aaf9-ee94e79433ce"
-                  style={{ height: "24px", width: "24px", marginRight: "2px"}} alt="pokerchip"
+                <img src="https://firebasestorage.googleapis.com/v0/b/casino-royale-9c472.appspot.com/o/gaming.svg?alt=media&token=3058a860-e55f-4cbb-aaf9-ee94e79433ce"
+                  style={{ height: "24px", width: "24px", marginRight: "2px"}} alt="pokerchip"  id="navbarRight"
                 />: {this.state.balance} </a>
 
               {/* Add Funds */}
-              <Link className="navbar-item" to="/AddBalance">
-                <strong id="navlink">ADD FUNDS</strong>
+              <Link className="navbar-item" id="navbarRight" to="/AddBalance">
+                <strong id="navbarRight">ADD FUNDS</strong>
                 <span class="icon">
-                  <i class="fa fa-credit-card" style={{ color: "white" }} aria-hidden="true"></i>
+                  <i class="fa fa-credit-card" style={{ color: "white" }} aria-hidden="true" id="navbarRight"></i>
                 </span>
               </Link>
 
@@ -132,7 +131,7 @@ class Navbar extends Component {
               <div className="navbar-item has-dropdown is-hoverable">
                 <a className="navbar-link">
                   <strong>Sports</strong>
-                  <span><i class="fa fa-trophy" style={{ color: "white" }} aria-hidden="true"></i></span>
+                  <span><i class="fa fa-trophy" style={{ color: "white" }} aria-hidden="true" id="navbarRight"></i></span>
                 </a>
                 <div className="navbar-dropdown is-right">
                   <Link className="navbar-item" to="/nfl">
