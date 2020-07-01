@@ -1,27 +1,28 @@
 .navbar{
   background: black;
-
-
-}
-
-#navlink{
-  color: white;
 }
 
 .navbar-link{
 color: white;
 }
 
-/* .navbar-dropdown{
-  color: black;
-} */
-/* .button{
-  
+#navlink{
+  color:white;
+}
+
+#navbarLeft{
   color: white;
-} */
+}
+
+#navbarRight :hover{
+color: blue;
+}
+
+#navbarLeft :hover{
+  color: blue;
+}
 
 #logo{
-  width:auto ;
-  height:auto;
-
+  height: auto;
+  width: auto;
 }
