@@ -22,6 +22,7 @@ class SignUp extends Component {
   }
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value })
+    console.log(e.target)
   }
   onSubmit(e) {
     e.preventDefault()
@@ -61,7 +62,7 @@ class SignUp extends Component {
             icon="fas fa-lock"
           />
           <AuthInputField
-            name="username"
+            name="userName"
             label="Username:"
             type="username"
             placeholder="Username"
@@ -70,7 +71,7 @@ class SignUp extends Component {
             icon="fas fa-lock"
           />
           <SubmitBtn onSubmit={this.onSubmit}>SUBMIT</SubmitBtn>
-          <LinkBtn route="/signIn">CREATE AN ACCOUNT</LinkBtn>
+          <LinkBtn route="/signIn">LOGIN</LinkBtn>
         </AuthForm>
         {/* {redirectUser()} */}
       </>
