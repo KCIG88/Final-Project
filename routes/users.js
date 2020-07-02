@@ -28,7 +28,7 @@ users.post('/register', (req, res) => {
             .then(user => {
               res.json({ status: user.email + 'registered' })
             })
-            .catch(err => { res.send('eroor:' + err) })
+            .catch(err => { res.send('error:' + err) })
         })
       } else {
         res.json({ error: "User already exists" })
@@ -85,6 +85,17 @@ users.get('/profile', (req, res) => {
     .catch(err => {
       res.send("error:" + err)
     })
+})
+
+users.put('/updateBalance'(req, res) => {
+  balance: this.state.newBalance
+  User.findOne({
+    email: req.body.email
+  }).then(user => {
+    console.log(user)
+  })
+}).catch(err => {
+  res.send('error:' + err)
 })
 
 module.exports = users;

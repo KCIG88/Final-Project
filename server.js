@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 
+
 const PORT = process.env.port || 8080;
 
 
@@ -21,6 +22,7 @@ app.use(express.json());
 
 
 
+
 // const MONGODB_URI = 'mongodb+srv://auth0-custom-db-user:Hornet94@cluster0-oidde.mongodb.net/auth0-integration?retryWrites=true&w=majority'
 
 mongoose.connect('mongodb://localhost:27017/project3', {
@@ -32,8 +34,8 @@ mongoose.connection.on('connected', () => {
     console.log('Mongoose is connected!!!')
 });
 
-const users = require("./routes/Users.js")
-app.use('/users', users)
+const Users = require("./routes/Users")
+app.use('/users', Users)
 
 // MIDDLEWARE
 app.use(morgan('tiny'));
