@@ -3,6 +3,7 @@ import "../styles/Profile.css";
 // import { useAuth0 } from "../react-auth0-spa";
 // import Axios from "axios";
 import jwt_decode from 'jwt-decode'
+import { withRouter } from "react-router-dom";
 
 
 
@@ -11,7 +12,7 @@ class Profile extends Component {
         super()
         this.state = {
             email: "",
-            username: "",
+            userName: "",
             balance: "",
 
         }
@@ -22,8 +23,8 @@ class Profile extends Component {
         const decoded = jwt_decode(token)
         console.log(decoded.email)
         console.log(token)
-
         this.setState({
+            _id: decoded._id,
             email: decoded.email,
             userName: decoded.userName,
             balance: decoded.balance,
@@ -35,6 +36,7 @@ class Profile extends Component {
 
 
     render() {
+        console.log(this.state.balance)
         return (
             <body>
                 {/* <img src='https://avatars0.githubusercontent.com/u/58921765?v=4' class="rounded-circle" alt="" id='profileImg'></img> */}
@@ -82,4 +84,4 @@ class Profile extends Component {
     };
 }
 
-export default Profile;
+export default withRouter(Profile);

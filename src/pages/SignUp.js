@@ -37,12 +37,10 @@ class SignUp extends Component {
     console.log(user)
 
     register(user).then(res => {
-      // console.log(newUser.email + " Registered")
       console.log(res)
       this.props.history.push('/signIn')
     })
       .catch(res => {
-        // console.log(res)
       })
 
   }

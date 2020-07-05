@@ -22,10 +22,10 @@ export const login = user => {
 
 }
 
-export const updateBalance = user => {
-    return axios
-        .put('http://localhost:8080/users/updateBalance', {
-            balance: user.balance
-        })
-}
+// export const updateBalance = user => {
+//     return axios
+//         .put('http://localhost:8080/users/updateBalance/' + this., {
+//             balance: user.balance
+//         })
+// }
 
