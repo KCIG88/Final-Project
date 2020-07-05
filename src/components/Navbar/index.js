@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 // import { useAuth0 } from "../../react-auth0-spa"
-
+import { withRouter } from "react-router-dom";
 import "../../styles/Navbar.css";
 import jwt_decode from 'jwt-decode'
 
@@ -135,4 +135,4 @@ class Navbar extends Component {
   };
 }
 
-export default Navbar;
+export default withRouter(Navbar);
