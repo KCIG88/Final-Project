@@ -6,11 +6,10 @@ export const register = newUser => {
             userName: newUser.userName,
             email: newUser.email,
             password: newUser.password,
-            balance: newUser.balanc
+            balance: newUser.balance,
         })
-        .then(res => {
-            console.log(res + "Registered")
-        })
+
+
 }
 
 export const login = user => {
@@ -22,3 +21,11 @@ export const login = user => {
 
 
 }
+
+// export const updateBalance = user => {
+//     return axios
+//         .put('http://localhost:8080/users/updateBalance/' + this., {
+//             balance: user.balance
+//         })
+// }
+

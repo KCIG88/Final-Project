@@ -6,11 +6,14 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require("bcrypt");
 const User = require('../models/User')
 users.use(cors())
+const app = ('express');
+
 
 process.env.SECRET_KEY = 'secret'
 
 users.post('/register', (req, res) => {
   const userData = {
+    _id: req.body._id,
     userName: req.body.userName,
     email: req.body.email,
     password: req.body.password,
@@ -28,7 +31,7 @@ users.post('/register', (req, res) => {
             .then(user => {
               res.json({ status: user.email + 'registered' })
             })
-            .catch(err => { res.send('eroor:' + err) })
+            .catch(err => { res.send('error:' + err) })
         })
       } else {
         res.json({ error: "User already exists" })
@@ -86,5 +89,29 @@ users.get('/profile', (req, res) => {
       res.send("error:" + err)
     })
 })
+
+
+users.route('/updateBalance/:id').post(function (req, res) {
+  User.findById(req.params.id, function (err, user) {
+    if (!user)
+      return (new Error('Unable To Find user With This Id'));
+    else {
+      // user.userName = req.body.userName;
+      // user.email = req.body.email;
+      user.balance = req.body.balance;
+      // user.betHistory = req.body.history;
+      user.save().then(emp => {
+        res.json('User Updated Successfully');
+      })
+        .catch(err => {
+          res.status(400).send("Unable To Update user");
+        });
+    }
+  });
+});
+
+
+
+
 
 module.exports = users;

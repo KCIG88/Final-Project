@@ -2,32 +2,32 @@ import axios from "axios";
 
 export default {
 
-   
-apifootballcall: function(){
+
+    apifootballcall: function () {
 
 
-  return axios({
-        "method":"GET",
-        "url":"https://api-football-v1.p.rapidapi.com/v2/fixtures/league/524/next/10",
-        "headers":{
-        "content-type":"application/octet-stream",
-        "x-rapidapi-host":"api-football-v1.p.rapidapi.com",
-        "x-rapidapi-key":"757f58322bmsh6b43a333b27dafep1ce363jsn5d5948e8b233",
-        "useQueryString":true
-        },"params":{
-        "timezone":"Europe/London"
-        }
+        return axios({
+            "method": "GET",
+            "url": "https://api-football-v1.p.rapidapi.com/v2/fixtures/league/524/next/10",
+            "headers": {
+                "content-type": "application/octet-stream",
+                "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+                "x-rapidapi-key": "757f58322bmsh6b43a333b27dafep1ce363jsn5d5948e8b233",
+                "useQueryString": true
+            }, "params": {
+                "timezone": "Europe/London"
+            }
         })
-        .then((response)=>{
-          console.log(response)
-        })
-        .catch((error)=>{
-          console.log(error)
-        })
-},
+            .then((response) => {
+                console.log(response)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    },
     getnext15gamesbyleague: function () {
         return axios.get("https://api-football-v1.p.rapidapi.com/v2/fixtures/league/524/next/757f58322bmsh6b43a333b27dafep1ce363jsn5d5948e8b233");
-        
+
     },
 
     getNFLoddsapi: function () {
@@ -55,7 +55,7 @@ apifootballcall: function(){
     },
 
     getoddsapi: function () {
-        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=1c9c9697e1c01c7b5a8668d184467046&sport=soccer_epl&region=us&mkt=spreads");
+        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=3664c022c8fc4b8061d07eb461631791sport=soccer_epl&region=us&mkt=spreads");
     },
 
     signUp: function (user) {

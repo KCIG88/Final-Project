@@ -2,18 +2,25 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 // import { useAuth0 } from "../../react-auth0-spa"
-
+import { withRouter } from "react-router-dom";
 import "../../styles/Navbar.css";
+import jwt_decode from 'jwt-decode'
 
 
 class Navbar extends Component {
   // const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
+
+
+
+
   logOut(e) {
     e.preventDefault()
-    localStorage.removeItem('usertoken')
+    localStorage.removeItem('token')
     this.props.history.push('/')
+
   }
+
 
   render() {
 
@@ -28,7 +35,11 @@ class Navbar extends Component {
           <Link className="nav-link" to="/signup">
             <strong>Register</strong>
           </Link>
-
+          <li className="nav-item">
+            <a href="" onClick={this.logOut.bind(this)} clasName="nav-link">
+              <strong>Logout</strong>
+            </a>
+          </li>
         </li>
       </ul>
     )
@@ -39,11 +50,7 @@ class Navbar extends Component {
             <strong>Profile</strong>
           </Link>
         </li>
-        <li className="nav-item">
-          <a href="" onClick={this.logOut.bind(this)} clasName="nav-link">
-            <strong>Logout</strong>
-          </a>
-        </li>
+
       </ul>
     )
 
@@ -81,10 +88,12 @@ class Navbar extends Component {
               <span><i class="fa fa-user fa-fw"></i></span>
             </Link>
 
+
+
             <Link className="navbar-item" to="/AddBalance">
               <strong>ADD FUNDS </strong>
               <span class="icon">
-              <i class="fa fa-credit-card" aria-hidden="true"></i>
+                <i class="fa fa-credit-card" aria-hidden="true"></i>
               </span>
             </Link>
 
@@ -126,4 +135,4 @@ class Navbar extends Component {
   };
 }
 
-export default Navbar;
+export default withRouter(Navbar);
