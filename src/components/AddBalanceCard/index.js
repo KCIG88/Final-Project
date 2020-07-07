@@ -40,7 +40,7 @@ class AddBalanceCard extends Component {
     this.setState({ _id: (this.state._id) })
     console.log(this.state.amount)
     console.log(this.state.balance)
-    console.log(this.state._id)
+    // console.log(this.state._id)
   }
   handleSubmit(e) {
     e.preventDefault();
@@ -68,9 +68,7 @@ class AddBalanceCard extends Component {
         <div class="container is-fluid">
           <div class="notification">
             <div class="card">
-              <div class="jumbotron text-center shadow p-3 mb-5 bg-light rounded">
-                <h1>Available Funds: $ {this.state.balance}</h1>
-              </div>
+             
               <header class="card-header"><h2 class="card-header-title"> Add Funds </h2>
               </header>
               <header class="card-header"><h2 class="card-header-title"> Amount:{this.state.amount}</h2>
@@ -91,7 +89,7 @@ class AddBalanceCard extends Component {
               <div class="field">
                 <label class="label">Otherwise, Please Enter Specific Amount</label>
                 <div class="control">
-                  <input class="input" onClick={this.handleChange} type="text" placeholder="Enter Amount"></input>
+                  <input class="input" onClick={this.handleChange} placeholder="Enter Amount"></input>
                   <div ><br></br> </div>
                 </div>
                 <div class="field is-grouped">

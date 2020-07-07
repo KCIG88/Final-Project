@@ -19,21 +19,21 @@ class Navbar extends Component {
     }
   }
 
-  componentDidMount() {
-    const token = localStorage.getItem("token")
-    const decoded = jwt_decode(token)
-    console.log(decoded.email)
-    console.log(token)
+  // componentDidMount() {
+  //   const token = localStorage.getItem("token")
+  //   const decoded = jwt_decode(token)
+  //   console.log(decoded.email)
+  //   console.log(token)
 
-    this.setState({
-      email: decoded.email,
-      userName: decoded.userName,
-      balance: decoded.balance,
-      if(token) {
-        jwt_decode(token);
-      }
-    })
-  }
+  //   this.setState({
+  //     email: decoded.email,
+  //     userName: decoded.userName,
+  //     balance: decoded.balance,
+  //     if(token) {
+  //       jwt_decode(token);
+  //     }
+  //   })
+  // }
 
 
 
@@ -110,9 +110,9 @@ class Navbar extends Component {
               </Link>
 
             {/* SignIn/LogOut */}
-              <Link className="navbar-item">
+             
                 {localStorage.usertoken ? userLink : loginRegLink}
-              </Link>
+             
            </div>
 
 
@@ -137,49 +137,8 @@ class Navbar extends Component {
                 </span>
               </Link>
 
-              {localStorage.usertoken ? userLink : loginRegLink}
+             
             </div>
-
-            <Link className="navbar-item" to="/profile">
-              <strong>Profile</strong>
-              <span><i class="fa fa-user fa-fw"></i></span>
-            </Link>
-
-
-
-            <Link className="navbar-item" to="/AddBalance">
-              <strong>ADD FUNDS </strong>
-              <span class="icon">
-                <i class="fa fa-credit-card" aria-hidden="true"></i>
-              </span>
-            </Link>
-
-
-            <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link">
-                <strong>Sports</strong>
-                <span><i class="fa fa-trophy" aria-hidden="true"></i></span>
-              </a>
-
-              <div className="navbar-dropdown">
-                <Link className="navbar-item" to="/nfl">
-                  NFL
-          </Link>
-                <Link className="navbar-item" to="/ncaa">
-                  NCAA Football
-          </Link>
-                <Link className="navbar-item" to="/mlb">
-                  MLB
-          </Link>
-                <Link className="navbar-item" to="/epl">
-                  EPL
-          </Link>
-                <Link className="navbar-item" to="/laliga">
-                  La Liga
-          </Link>
-                <Link className="navbar-item" to="/bundesliga">
-                  Bundesliga
-          </Link>
 
               {/* DropDown */}
               <div className="navbar-item has-dropdown is-hoverable">
@@ -210,9 +169,10 @@ class Navbar extends Component {
                 </div>
               </div>
             </div>
-          </div>
+          
+     
         </nav>
-      </div >
+      </div>
     )
 
   };

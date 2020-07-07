@@ -55,7 +55,7 @@ export default {
     },
 
     getoddsapi: function () {
-        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=3664c022c8fc4b8061d07eb461631791sport=soccer_epl&region=us&mkt=spreads");
+        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=e8e0053776c83a4e81a9dbe5850b45ed&sport=soccer_epl&region=us&mkt=spreads");
     },
 
     signUp: function (user) {

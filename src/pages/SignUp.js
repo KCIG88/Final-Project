@@ -9,7 +9,6 @@ import SubmitBtn from "../components/Form/SubmitBtn";
 import LinkBtn from "../components/LinkBtn";
 import { register } from "../components/UserFunctons/UserFunctions"
 import { withRouter } from "react-router-dom"
-
 class SignUp extends Component {
   constructor() {
     super()
@@ -35,14 +34,12 @@ class SignUp extends Component {
       balance: this.state.balance
     }
     console.log(user)
-
     register(user).then(res => {
       console.log(res)
       this.props.history.push('/signIn')
     })
       .catch(res => {
       })
-
   }
   render() {
     return (
@@ -78,17 +75,8 @@ class SignUp extends Component {
           <SubmitBtn onSubmit={this.onSubmit}>SUBMIT</SubmitBtn>
           <LinkBtn route="/signIn">LOGIN</LinkBtn>
         </AuthForm>
-
       </>
-
-
-
-
-
-
     );
   }
 }
-
-
 export default withRouter(SignUp);
