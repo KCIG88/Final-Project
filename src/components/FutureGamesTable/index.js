@@ -1,7 +1,7 @@
 import React, { Component} from "react";
 
 import API from "../../utils/API";
-import "../../styles/FutureGamesTable.css";
+import "../../styles/NcaaTable.css";
 //import { useHistory } from 'react-router-dom'
 
 class FutureGamesTables extends Component {
@@ -50,7 +50,7 @@ class FutureGamesTables extends Component {
       <>
         <div class="container is-fluid">
           <div class="notification">
-            <h1>Upcoming Games</h1>
+            <h1 id="NFLbanner">Upcoming Games</h1>
             <br></br>
             <table class="table">
               <thead>
