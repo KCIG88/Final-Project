@@ -13,7 +13,7 @@ function PastBetsTable() {
         <div class="notification">
         <div>
             
-                <h1>Past Bets</h1>
+                <h1>Current Bets</h1>
                 <br></br>
                 <table class="table">
                     <thead>
