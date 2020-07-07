@@ -90,30 +90,35 @@ class Navbar extends Component {
         <nav className="navbar" role="navigation" aria-label="main navigation">
           <div className="navbar-brand-is-dark">
             <a className="navbar-item" href="/">
-              <img id="logo" src="https://lh3.googleusercontent.com/VtNJ-Oz764laDLxZctvodnze-tGcaNDwZsdlZVKg7dXe3nu4FGuKWIrpeCgAz1NP5jqX=s85" width="112" height="28" alt="" />
+              <img id="logo" src=""
+                width="112" height="28" alt="" />
             </a>
-           
+
             <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" alt="">
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
             </a>
           </div>
-          
-          <div id="navbarBasicExample" className="navbar-menu">
-           <div class="navbar-start">
 
-            {/* Home */}
+          <div id="navbarBasicExample" className="navbar-menu">
+            <div class="navbar-start">
+
+              {/* Home */}
               <Link className="navbar-item" id="navbarLeft" to="/">
-                Home
+                <strong id="navbarLeft">Home</strong>
                 <span class="icon"><i class="fas fa-home" id="navbarLeft"></i></span>
               </Link>
 
-            {/* SignIn/LogOut */}
-             
-                {localStorage.usertoken ? userLink : loginRegLink}
-             
-           </div>
+              {/* SignIn/LogOut */}
+
+              {localStorage.usertoken ? userLink : loginRegLink}
+
+              <Link className="navbar-item" id="navbarLeft" onClick={this.logOut.bind(this)}>
+                <strong>Logout</strong>
+              </Link>
+
+            </div>
 
 
             <div class="navbar-end">
@@ -126,7 +131,7 @@ class Navbar extends Component {
               {/* Poker Chip */}
               <a class="navbar-item" style={{ color: "white" }}>
                 <img src="https://firebasestorage.googleapis.com/v0/b/casino-royale-9c472.appspot.com/o/gaming.svg?alt=media&token=3058a860-e55f-4cbb-aaf9-ee94e79433ce"
-                  style={{ height: "24px", width: "24px", marginRight: "2px"}} alt="pokerchip"  id="navbarRight"
+                  style={{ height: "24px", width: "24px", marginRight: "2px" }} alt="pokerchip" id="navbarRight"
                 />: {this.state.balance} </a>
 
               {/* Add Funds */}
@@ -137,40 +142,40 @@ class Navbar extends Component {
                 </span>
               </Link>
 
-             
+
             </div>
 
-              {/* DropDown */}
-              <div className="navbar-item has-dropdown is-hoverable">
-                <a className="navbar-link">
-                  <strong>Sports</strong>
-                  <span><i class="fa fa-trophy" style={{ color: "white" }} aria-hidden="true" id="navbarRight"></i></span>
-                </a>
-                <div className="navbar-dropdown is-right">
-                  <Link className="navbar-item" to="/nfl">
-                    NFL
+            {/* DropDown */}
+            <div className="navbar-item has-dropdown is-hoverable">
+              <a className="navbar-link">
+                <strong>Sports</strong>
+                <span><i class="fa fa-trophy" style={{ color: "white" }} aria-hidden="true" id="navbarRight"></i></span>
+              </a>
+              <div className="navbar-dropdown is-right">
+                <Link className="navbar-item" to="/nfl">
+                  NFL
                   </Link>
-                  <Link className="navbar-item" to="/ncaa">
-                    NCAA Football
+                <Link className="navbar-item" to="/ncaa">
+                  NCAA Football
                   </Link>
-                  <Link className="navbar-item" to="/mlb">
-                    MLB
+                <Link className="navbar-item" to="/mlb">
+                  MLB
                   </Link>
-                  <Link className="navbar-item" to="/epl">
-                    EPL
+                <Link className="navbar-item" to="/epl">
+                  EPL
                   </Link>
-                  <Link className="navbar-item" to="/laliga">
-                    La Liga
+                <Link className="navbar-item" to="/laliga">
+                  La Liga
                   </Link>
-                  <Link className="navbar-item" to="/bundesliga">
-                    Bundesliga
+                <Link className="navbar-item" to="/bundesliga">
+                  Bundesliga
                   </Link>
 
-                </div>
               </div>
             </div>
-          
-     
+          </div>
+
+
         </nav>
       </div>
     )
