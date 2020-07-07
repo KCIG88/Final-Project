@@ -89,10 +89,7 @@ class Navbar extends Component {
       <div>
         <nav className="navbar" role="navigation" aria-label="main navigation">
           <div className="navbar-brand-is-dark">
-            <a className="navbar-item" href="/">
-              <img id="logo" src=""
-                width="112" height="28" alt="" />
-            </a>
+
 
             <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" alt="">
               <span aria-hidden="true"></span>
@@ -103,7 +100,12 @@ class Navbar extends Component {
 
           <div id="navbarBasicExample" className="navbar-menu">
             <div class="navbar-start">
-
+            
+            <a href="https://ibb.co/3WdD98x">
+            <img src="https://i.ibb.co/WF5b4dr/logo.png" 
+            style={{ height: "75px", width: "75px", marginTop:"7px", marginLeft:"7px", marginRight:"7px"  }} 
+            alt="logo" ></img></a>
+              
               {/* Home */}
               <Link className="navbar-item" id="navbarLeft" to="/">
                 <strong id="navbarLeft">Home</strong>
