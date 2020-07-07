@@ -7,9 +7,9 @@ const UserSchema = new Schema({
   userName: { type: String, required: true },
   email: { type: String, required: true },
   password: { type: String, required: true },
-  balance: { type: Number, require: false },
-  createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: Date.now }
+  balance: { type: Number, required: false },
+  betHistory: { type: String, required: false }
+
 });
 
 

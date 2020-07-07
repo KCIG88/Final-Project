@@ -1,5 +1,5 @@
-
-import React, { Component, useState } from 'react';
+import axios from 'axios'
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import Navbar from "./components/Navbar/index"
@@ -22,63 +22,62 @@ import PlaceBet from './pages/PlaceBet';
 
 function App() {
 
-  
-    const [state, setState] = useState({bet:{}}, {balance:{}})
-    console.log(state)
-    return (
-      <div className="App">
-        <Router>
-          <div>
-            <header>
-              <Navbar  />
-            </header>
-            <Switch>
-              <Route exact path={["/profile"]}>
-                <Profile setState={setState} state={state} />
-              </Route>
-              <Route exact path={["/addbalance"]}>
-                <AddBalance setState={setState} state={state} />
-              </Route>
-              <Route exact path={["/placebet"]}>
-                <PlaceBet setState={setState} state={state} />
-              </Route>
-              <Route exact path={["/nfl"]}>
-                <NFL />
-              </Route>
-              <Route exact path={["/ncaa"]}>
-                <NCAA />
-              </Route>
-              <Route exact path={["/mlb"]}>
-                <MLB />
-              </Route>
-              <Route exact path={["/epl"]}>
-                <EPL />
-              </Route>
-              <Route exact path={["/LALIGA"]}>
-                <LALIGA />
-              </Route>
-              <Route exact path={["/BUNDESLIGA"]}>
-                <BUNDESLIGA />
-              </Route>
-              <Route exact path={["/signin"]} >
-                <SignIn />
-              </Route>
-              <Route exact path={["/signup"]}>
-                <SignUp />
-              </Route>
+  const [state, setState] = useState({ bet: {} })
+  console.log(state)
+  return (
+    <div className="App">
+      <Router>
+        <div>
+          <header>
+            <Navbar />
+          </header>
+          <Switch>
+            <Route exact path={["/profile"]} component={Profile}>
+              <Profile />
+            </Route>
+            <Route exact path={["/addbalance"]}>
+              <AddBalance />
+            </Route>
+            <Route exact path={["/placebet"]}>
+              <PlaceBet setState={setState} state={state} />
+            </Route>
+            <Route exact path={["/nfl"]}>
+              <NFL />
+            </Route>
+            <Route exact path={["/ncaa"]}>
+              <NCAA />
+            </Route>
+            <Route exact path={["/mlb"]}>
+              <MLB />
+            </Route>
+            <Route exact path={["/epl"]}>
+              <EPL />
+            </Route>
+            <Route exact path={["/LALIGA"]}>
+              <LALIGA />
+            </Route>
+            <Route exact path={["/BUNDESLIGA"]}>
+              <BUNDESLIGA />
+            </Route>
+            <Route exact path={["/signin"]} component={SignUp} >
+              <SignIn />
+            </Route>
+            <Route exact path={["/signup"]} component={SignUp}>
+              <SignUp />
+            </Route>
 
-              <Route exact path={["/", "/home"]}>
-                <Dashboard setState={setState} state={state}/>
-              </Route>
+            <Route exact path={["/", "/home"]}>
+              <Dashboard setState={setState} state={state} />
+            </Route>
 
-            </Switch>
-            <Footer />
-          </div>
-        </Router >
-      </div>
+          </Switch>
+          <Footer />
+        </div>
+      </Router >
+    </div>
 
-     ) ;
-  }
+  );
+}
 
 
 export default App;

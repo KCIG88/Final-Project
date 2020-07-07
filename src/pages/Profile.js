@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import "../styles/Profile.css";
 // import Axios from "axios";
 import jwt_decode from 'jwt-decode'
+import { withRouter } from "react-router-dom";
 
 
 
@@ -11,7 +12,7 @@ class Profile extends Component {
         super()
         this.state = {
             email: "",
-            username: "",
+            userName: "",
             balance: "",
 
         }
@@ -20,22 +21,24 @@ class Profile extends Component {
     componentDidMount() {
         const token = localStorage.getItem("token")
         const decoded = jwt_decode(token)
-        console.log(decoded.email)
-        console.log(token)
-
+        if (token) {
+            jwt_decode(token);
+        } else { this.props.history.push('/login') }
         this.setState({
+            _id: decoded._id,
             email: decoded.email,
             userName: decoded.userName,
             balance: decoded.balance,
-            if(token) {
-                jwt_decode(token);
-            }
         })
     }
 
 
     render() {
+
         const {state, setState, history} = this.props
+
+        console.log(this.state.balance)
+
         return (
             <body>
                 <br></br>
@@ -92,4 +95,4 @@ class Profile extends Component {
     };
 }
 
-export default Profile;
+export default withRouter(Profile);

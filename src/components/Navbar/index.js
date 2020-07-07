@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import jwt_decode from 'jwt-decode'
+
+// import { useAuth0 } from "../../react-auth0-spa"
+import { withRouter } from "react-router-dom";
+
 import "../../styles/Navbar.css";
+import jwt_decode from 'jwt-decode'
 
 
 class Navbar extends Component {
@@ -31,10 +35,15 @@ class Navbar extends Component {
     })
   }
 
+
+
+
+
   logOut(e) {
     e.preventDefault()
-    localStorage.removeItem('usertoken')
+    localStorage.removeItem('token')
     this.props.history.push('/')
+
   }
 
 
@@ -70,6 +79,7 @@ class Navbar extends Component {
         </Link>
 
       </>
+
     )
 
 
@@ -127,6 +137,50 @@ class Navbar extends Component {
                 </span>
               </Link>
 
+              {localStorage.usertoken ? userLink : loginRegLink}
+            </div>
+
+            <Link className="navbar-item" to="/profile">
+              <strong>Profile</strong>
+              <span><i class="fa fa-user fa-fw"></i></span>
+            </Link>
+
+
+
+            <Link className="navbar-item" to="/AddBalance">
+              <strong>ADD FUNDS </strong>
+              <span class="icon">
+                <i class="fa fa-credit-card" aria-hidden="true"></i>
+              </span>
+            </Link>
+
+
+            <div className="navbar-item has-dropdown is-hoverable">
+              <a className="navbar-link">
+                <strong>Sports</strong>
+                <span><i class="fa fa-trophy" aria-hidden="true"></i></span>
+              </a>
+
+              <div className="navbar-dropdown">
+                <Link className="navbar-item" to="/nfl">
+                  NFL
+          </Link>
+                <Link className="navbar-item" to="/ncaa">
+                  NCAA Football
+          </Link>
+                <Link className="navbar-item" to="/mlb">
+                  MLB
+          </Link>
+                <Link className="navbar-item" to="/epl">
+                  EPL
+          </Link>
+                <Link className="navbar-item" to="/laliga">
+                  La Liga
+          </Link>
+                <Link className="navbar-item" to="/bundesliga">
+                  Bundesliga
+          </Link>
+
               {/* DropDown */}
               <div className="navbar-item has-dropdown is-hoverable">
                 <a className="navbar-link">
@@ -164,4 +218,4 @@ class Navbar extends Component {
   };
 }
 
-export default Navbar;
+export default withRouter(Navbar);
