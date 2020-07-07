@@ -4,6 +4,7 @@ import "../styles/Profile.css";
 // import Axios from "axios";
 import jwt_decode from 'jwt-decode'
 import { withRouter } from "react-router-dom";
+import PastBetsTable from "../components/PastBetsTable";
 
 
 
@@ -40,6 +41,7 @@ class Profile extends Component {
         console.log(this.state.balance)
 
         return (
+            <>
             <body>
                 <br></br>
                 {/* <img src='https://avatars0.githubusercontent.com/u/58921765?v=4' class="rounded-circle" alt="" id='profileImg'></img> */}
@@ -91,6 +93,8 @@ class Profile extends Component {
             </body >
 
 
+< PastBetsTable />
+</>
         );
     };
 }
