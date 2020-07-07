@@ -36,14 +36,14 @@ class FutureGamesTables extends Component {
 
     const {state, setState, history} = this.props
 
-    // console.log(this.props.state)
-    // const eventTime = results.map(data => {
-    //   return { ...data, commence_time: new Date(data.commence_time * 1000).toString() }
-    // })
+    console.log(this.props.state)
+    const eventTime = results.map(data => {
+      return { ...data, commence_time: new Date(data.commence_time * 1000).toString() }
+    })
 
-    // console.log(eventTime)
+    console.log(eventTime)
 
-    // console.log(this.props)
+    console.log(this.props)
 
     return (
 
@@ -65,7 +65,7 @@ class FutureGamesTables extends Component {
               </thead>
 
               <tbody>
-                {results.map(data => {
+                {eventTime.map(data => {
                   console.log(data.sites[0])
                   if(data.sites[0] !== undefined){
                   return (<tr>
@@ -73,7 +73,7 @@ class FutureGamesTables extends Component {
                     <td>{data.teams[0]}</td>
                     <td>{data.teams[1]}</td>
                     <td>{data.sites[0].odds.spreads.points[0]}</td>
-                    <td></td>
+                    <td>{data.sites[0].odds.spreads.odds[0]}</td>
 
                     <td> <button onClick={ () => { 
                       setState({...state, bet: data})
