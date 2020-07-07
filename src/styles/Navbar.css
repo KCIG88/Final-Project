@@ -1,23 +1,32 @@
 .navbar{
   background: black;
-  color: white;
-
 }
 
-.navbar-item{
+.navbar-link{
+color: white;
+}
+
+#navlink{
+  color:white;
+}
+
+#navbarLeft{
   color: white;
 }
 
-.navbar-dropdown{
+#navbarRight{
   color: white;
 }
-.button{
-  
-  color: white;
+
+#navbarRight :hover{
+color: blue;
+}
+
+#navbarLeft :hover{
+  color: blue;
 }
 
 #logo{
-  width:auto ;
-  height:auto;
-
+  height: auto;
+  width: auto;
 }

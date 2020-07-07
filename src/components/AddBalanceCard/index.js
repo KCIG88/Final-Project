@@ -4,9 +4,6 @@ import jwt_decode from 'jwt-decode'
 // import express from "express";
 import { withRouter } from "react-router-dom";
 import axios from 'axios'
-
-
-
 class AddBalanceCard extends Component {
   constructor(props) {
     super(props)
@@ -17,12 +14,10 @@ class AddBalanceCard extends Component {
       betHistory: "",
       amount: 0,
       _id: "",
-
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
   componentDidMount() {
     // this.getUserById();
     const token = localStorage.getItem("token")
@@ -38,10 +33,7 @@ class AddBalanceCard extends Component {
         jwt_decode(token);
       }
     })
-
   }
-
-
   handleChange = (e) => {
     this.setState({ amount: parseInt(e.target.value) })
     this.setState({ balance: parseInt(this.state.amount + this.state.balance) })
@@ -50,10 +42,8 @@ class AddBalanceCard extends Component {
     console.log(this.state.balance)
     console.log(this.state._id)
   }
-
   handleSubmit(e) {
     e.preventDefault();
-
     axios.post('http://localhost:8080/users/updateBalance/' + this.state._id, {
       // email: this.state.email,
       // userName: this.state.userName,
@@ -67,33 +57,24 @@ class AddBalanceCard extends Component {
       .catch((error) => {
         console.log(error);
       });
-
   }
-
   render() {
-
     console.log(this.state.email)
     console.log(this.state.userName)
     console.log(this.state._id)
     console.log(this.state.betHistory)
-
     return (
-
       <>
         <div class="container is-fluid">
           <div class="notification">
-
-
             <div class="card">
               <div class="jumbotron text-center shadow p-3 mb-5 bg-light rounded">
                 <h1>Available Funds: $ {this.state.balance}</h1>
               </div>
-
               <header class="card-header"><h2 class="card-header-title"> Add Funds </h2>
               </header>
               <header class="card-header"><h2 class="card-header-title"> Amount:{this.state.amount}</h2>
               </header>
-
               <div class="card-content">
                 <div class="content">
                   Select an amount below to debit funds from your bank and add to
@@ -107,16 +88,12 @@ class AddBalanceCard extends Component {
                 <button href="#" value="100" onClick={this.handleChange} class="card-footer-item">$100</button>
                 <button href="#" value="1000" onClick={this.handleChange} class="card-footer-item">$1000</button>
               </footer>
-
-
               <div class="field">
                 <label class="label">Otherwise, Please Enter Specific Amount</label>
                 <div class="control">
                   <input class="input" onClick={this.handleChange} type="text" placeholder="Enter Amount"></input>
                   <div ><br></br> </div>
                 </div>
-
-
                 <div class="field is-grouped">
                   <div class="control">
                     <button class="button is-link" onClick={this.handleSubmit}>Submit</button>
@@ -126,12 +103,9 @@ class AddBalanceCard extends Component {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
-
       </>
-
     );
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom";
 import "../styles/Profile.css";
-// import { useAuth0 } from "../react-auth0-spa";
 // import Axios from "axios";
 import jwt_decode from 'jwt-decode'
 import { withRouter } from "react-router-dom";
@@ -34,23 +34,31 @@ class Profile extends Component {
 
 
     render() {
+
+        const {state, setState, history} = this.props
+
         console.log(this.state.balance)
+
         return (
             <body>
+                <br></br>
                 {/* <img src='https://avatars0.githubusercontent.com/u/58921765?v=4' class="rounded-circle" alt="" id='profileImg'></img> */}
-                < div class="container is-fluid" >
-                    <div class="jumbotron text-center shadow p-3 mb-5 bg-light rounded">
-                        <h1>Username: {this.state.userName}</h1>
-                        <h1>Email: {this.state.email}</h1>
-                        <h1>Available Funds: $ {this.state.balance}</h1>
-                        <button>Add Funds</button>
+                < div class="container" id="profileContainer" >
+                    <div class="jumbotron text-center shadow p-3 mb-5">
+                        <img class="is-center" src="https://placeholder.com/100x100.jpeg" alt="profileImg"></img>
+                        <h2>Username: {this.state.userName}</h2>
+                        <h2>Email: {this.state.email}</h2>
+                        <h2>Available Funds: $ {this.state.balance}</h2>
+                        <Link to="/addBalance"> <button o>Add Funds</button></Link>
                     </div>
                 </div >
+                <br></br>
                 <div class="container">
-                    <div class="jumbotron text-center shadow p-3 mb-5 bg-light rounded">
+                    <div class="jumbotron text-center shadow p-3 mb-5 bg-light">
                         <div>
                             <body>
-                                <p>My Bets</p>
+                                <h1>My Bets</h1>
+                                <br></br>
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -59,16 +67,21 @@ class Profile extends Component {
                                             <th>Away Team</th>
                                             <th>Home Team Line</th>
                                             <th>Home Team Win</th>
-                                            <th>Bet on this game</th>
+                                            {/* <th>Bet on this game</th> */}
                                         </tr>
                                     </thead>
                                     <tbody> <tr>
-                                        <th>01/01/2020</th>
+                                        <td>01/01/2020</td>
                                         <td>Leicester City </td>
                                         <td>Liverpool</td>
                                         <td>-1.5(-153)</td>
                                         <td>-200</td>
-                                        <td><button>Add Funds</button></td>
+                                        {/* <td><button onClick={() => {
+                                            setState({ ...state, bet: data })
+                                            //move to seperate page
+                                            history.push('/placebet')
+                                        }
+                                        }>Place Bet</button></td> */}
                                     </tr></tbody>
                                 </table>
                             </body>

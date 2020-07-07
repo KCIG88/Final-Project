@@ -6,7 +6,8 @@ class PlaceBetCard extends Component {
 
   state={
     Wager:0,
-    Prediction: 0
+    Prediction: 0,
+    balance: 0
   }
 
 

@@ -22,10 +22,6 @@ import PlaceBet from './pages/PlaceBet';
 
 function App() {
 
-
-
-
-
   const [state, setState] = useState({ bet: {} })
   console.log(state)
   return (
