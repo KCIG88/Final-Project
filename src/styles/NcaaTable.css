@@ -27,12 +27,16 @@
       font-size: 25px;
       
     }
-    
+    .table thead td, .table thead th{
+      color: white;
+    }
+
     tr {
       height: 50px;
       border: 2px black solid;
       font-size: 25px;
       padding: 1vh;
+      
     }
   
     tbody tr {
