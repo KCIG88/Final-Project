@@ -32,7 +32,7 @@ function MyBetsTable() {
                         <td>Liverpool</td>
                         <td>-1.5</td>
                         <td>1.89</td>
-                        <td><button class="button-is-hovered">Place a Bet</button></td>
+                        <td>PENDING....</td>
                     </tr></tbody>
                 </table>
             

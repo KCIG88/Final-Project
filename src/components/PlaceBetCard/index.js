@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import "../../styles/BundesligaTable.css";
+import "../../styles/PlaceBet.css";
+
 
 
 class PlaceBetCard extends Component {
