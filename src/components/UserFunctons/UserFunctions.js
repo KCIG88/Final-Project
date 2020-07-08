@@ -14,7 +14,7 @@ export const register = newUser => {
 
 export const login = user => {
     return axios
-        .post('/login', {
+        .post('/api/users/login', {
             email: user.email,
             password: user.password
         })
