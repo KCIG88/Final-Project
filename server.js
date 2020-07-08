@@ -19,6 +19,14 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 
+// Enable CORS
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT,DELETE");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    next();
+});
+
 
 
  const MONGODB_URI = 'mongodb+srv://auth0-custom-db-user:Hornet94@cluster0-oidde.mongodb.net/project3?retryWrites=true&w=majority'
