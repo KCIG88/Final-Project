@@ -40,12 +40,14 @@ class EPLTable extends Component {
 
       <>
       <div class="container is-fluid">
-  <div class="notification">
-
-
-        <h1 id="eplbanner">English Premier League Games</h1> <br></br>
-        <table class="table">
-          <thead>
+      <div class="notification">
+            <header>
+              <h1 id="eplbanner"><strong>English Premier League Games</strong><br></br>
+              <img id="epl-logo" src="https://static.dezeen.com/uploads/2016/08/designstudiopremier-league-rebrand-relaunch-logo-design-barclays-football_dezeen_slideshow-a.jpg" 
+              width="112" height="28" align="center" alt="epllogo"></img></h1>
+            </header> <br></br>
+            <table class="table">
+              <thead>
             <tr>
               <th>Date</th>
               <th>Home Team</th>

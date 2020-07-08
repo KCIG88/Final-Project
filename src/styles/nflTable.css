@@ -4,8 +4,9 @@
     color: white;
     padding: 1.5vh 0;
     font-size: 60px;
-    background-image: url("../images/NFL-logo-bg.jpeg");
+    background-image: url("../images/footballbanner.jpeg");
     background-size:cover;
+    -webkit-text-stroke: 2px black;
   }
 
 

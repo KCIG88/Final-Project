@@ -40,10 +40,13 @@ class LALIGATable extends Component {
 
       <>
       <div class="container is-fluid">
-  <div class="notification">
-        <h1 id="ligabanner">LA Liga Games</h1> <br></br>
-        <table class="table">
-          <thead>
+      <div class="notification">
+            <header>
+              <h1 id="ligabanner"><strong>La Liga Soccer Games</strong>
+              <img id="liga-logo" src="https://upload.wikimedia.org/wikipedia/commons/1/13/LaLiga.svg" width="112" height="28" align="center" alt="ligalogo"></img></h1>
+            </header> <br></br>
+            <table class="table">
+              <thead>
             <tr>
               <th>Date</th>
               <th>Home Team</th>

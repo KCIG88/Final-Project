@@ -3,7 +3,7 @@ import "../../styles/MyBetsTable.css";
 
 
 
-function PastBetsTable() {
+function MyBetsTable() {
 
 
     return (
@@ -13,7 +13,7 @@ function PastBetsTable() {
         <div class="notification">
         <div>
             
-                <h1>Current Bets</h1>
+                <h1>Pending Bets</h1>
                 <br></br>
                 <table class="table">
                     <thead>
@@ -44,4 +44,4 @@ function PastBetsTable() {
     );
 }
 
-export default PastBetsTable;
+export default MyBetsTable;

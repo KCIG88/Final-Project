@@ -42,7 +42,7 @@ class MLBTable extends Component {
         <div class="container is-fluid">
   <div class="notification">
         <header>
-        <h1 id="MLBbanner" >MLB Games 
+        <h1 id="MLBbanner" ><strong>MLB Games </strong>
         <img id="MLB-logo" alt="mlblogo" src="https://a4.espncdn.com/combiner/i?img=%2Fi%2Fespn%2Fmisc_logos%2F500%2Fmlb.png" width="112" height="28" align="center"></img></h1>
         </header> <br></br>
         <table class="table">
