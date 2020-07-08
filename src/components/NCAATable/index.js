@@ -25,44 +25,67 @@ class NCAATable extends Component {
   render() {
     const { results } = this.state
     console.log(results)
+
+    const { state, setState, history } = this.props
+
+    console.log(this.props.state)
+    const eventTime = results.map(data => {
+      return { ...data, commence_time: new Date(data.commence_time * 1000).toString() }
+    })
+
+    console.log(eventTime)
+
+    console.log(this.props)
     return (
 
       <>
         <div class="container is-fluid">
-  <div class="notification">
-  <header>
-        <h1 id="NFLbanner" >Top College Football games 2020-2021 Season
-        <img id="Nfl-logo"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/NCAA_logo.svg/1042px-NCAA_logo.svg.png" width="112" height="28" align="center" alt="ncaalogo"></img></h1>
-        </header> <br></br>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Home Team</th>
-              <th>Away Team</th>
-              <th>Home Team Line</th>
-              <th>Home Team Win</th>
-              <th>Bet on this game</th>
-            </tr>
-          </thead>
+          <div class="notification">
+            <header>
+              <h1 id="NCAAbanner" ><strong>Top College Football games 2020-2021 Season</strong><br></br>
+                <img id="Nfl-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/NCAA_logo.svg/1042px-NCAA_logo.svg.png" width="112" height="28" align="center" alt="ncaalogo"></img></h1>
+            </header> <br></br>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Home Team</th>
+                  <th>Away Team</th>
+                  <th>Home Team Line</th>
+                  <th>Home Team Win</th>
+                  <th>Bet on this game</th>
+                </tr>
+              </thead>
 
-          <tbody>
-            {results.map(data => {
-              return (<tr>
-                <td>{data.commence_time}</td>
-              <td>{data.teams[0]}</td>
-              <td>{data.teams[1]}</td>
-              <td>{-7.5}</td>
-              <td>{1.89}</td>
-              <td><button>Place a Bet</button></td>
+              <tbody>
+                {eventTime.map(data => {
+                  console.log(data.sites[0])
+                  if (data.sites[0] !== undefined) {
+                    return (<tr>
+                      <td >{data.commence_time}</td>
+                      <td>{data.teams[0]}</td>
+                      <td>{data.teams[1]}</td>
+                      <td>{data.sites[0].odds.spreads.points[0]}</td>
+                      <td>{data.sites[0].odds.spreads.odds[0]}</td>
 
-              </tr>
-            )})} 
-           
+                      <td> <button onClick={() => {
+                        setState({ ...state, bet: data })
+                        //move to seperate page
+                        history.push('/placebet')
+                      }
+                      }>Place a Bet</button></td>
+                    </tr>
+                    )
 
-           </tbody>
-        </table>
-        </div>
+                  } else { return "" }
+                })}
+
+
+
+
+              </tbody>
+            </table>
+          </div>
         </div>
 
       </>

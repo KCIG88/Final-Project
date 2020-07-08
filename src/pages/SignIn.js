@@ -9,7 +9,6 @@ import SubmitBtn from "../components/Form/SubmitBtn";
 import LinkBtn from "../components/LinkBtn";
 import { login } from "../components/UserFunctons/UserFunctions.js";
 import { withRouter } from "react-router-dom"
-
 class SignIn extends Component {
   constructor() {
     super()
@@ -17,12 +16,10 @@ class SignIn extends Component {
       email: '',
       password: '',
       userName: ''
-
     }
     this.onChange = this.onChange.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
   }
-  
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value })
     console.log(e.target)
@@ -38,16 +35,12 @@ class SignIn extends Component {
       console.log(res)
       if (res) {
         window.localStorage.setItem("token", res.data)
-
         this.props.history.push('/profile')
-
       }
     })
       .catch(console.log)
   }
-  
   render() {
-    const {history}=this.props
     return (
       <>
         <AuthForm title="SIGN IN">
@@ -69,19 +62,12 @@ class SignIn extends Component {
             value={this.state.password}
             icon="fas fa-lock"
           />
-          <SubmitBtn onSubmit={{ handleSubmit(){history.push('/profile')}}}>SUBMIT</SubmitBtn>
+          <SubmitBtn onSubmit={this.onSubmit}>SUBMIT</SubmitBtn>
           <LinkBtn route="/signup">CREATE AN ACCOUNT</LinkBtn>
         </AuthForm>
         {/* {redirectUser()} */}
       </>
-
-
-
-
-
-
     );
   }
 }
-
 export default withRouter(SignIn);

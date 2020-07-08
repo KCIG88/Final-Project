@@ -23,7 +23,7 @@ class PlaceBetCard extends Component {
 
     const { state, setState } = this.props
     console.log(state)
-    const matchOdds = state.bet.sites[0].odds.spreads.odds[0]
+    const matchOdds = [state.bet.sites[0].odds.spreads.odds[0]]
     console.log(this.state)
     
     return (

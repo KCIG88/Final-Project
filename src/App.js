@@ -42,22 +42,22 @@ function App() {
               <PlaceBet setState={setState} state={state} />
             </Route>
             <Route exact path={["/nfl"]}>
-              <NFL />
+              <NFL setState={setState} state={state}/>
             </Route>
             <Route exact path={["/ncaa"]}>
-              <NCAA />
+              <NCAA  setState={setState} state={state}/>
             </Route>
             <Route exact path={["/mlb"]}>
-              <MLB />
+              <MLB setState={setState} state={state} />
             </Route>
             <Route exact path={["/epl"]}>
-              <EPL />
+              <EPL setState={setState} state={state} />
             </Route>
             <Route exact path={["/LALIGA"]}>
-              <LALIGA />
+              <LALIGA setState={setState} state={state} />
             </Route>
             <Route exact path={["/BUNDESLIGA"]}>
-              <BUNDESLIGA />
+              <BUNDESLIGA setState={setState} state={state} />
             </Route>
             <Route exact path={["/signin"]} component={SignUp} >
               <SignIn />

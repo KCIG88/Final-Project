@@ -6,6 +6,8 @@
     font-size: 60px;
     background-image: url("../images/britishflag.jpeg");
     background-size: cover;
+    -webkit-text-stroke: 2px black;
+
   }
   
   

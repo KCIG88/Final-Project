@@ -6,6 +6,8 @@
 color: white;
 }
 
+
+
 #navlink{
   color:white;
 }
@@ -22,11 +24,8 @@ color: white;
 color: blue;
 }
 
+
 #navbarLeft :hover{
   color: blue;
 }
 
-#logo{
-  height: auto;
-  width: auto;
-}

@@ -51,11 +51,11 @@ export default {
     },
 
     getGERModdsapi: function () {
-        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=1c9c9697e1c01c7b5a8668d184467046&sport=soccer_germany_bundesliga&region=us&mkt=spreads");
+        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=e8e0053776c83a4e81a9dbe5850b45ed&sport=soccer_germany_bundesliga&region=us&mkt=spreads");
     },
 
     getoddsapi: function () {
-        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=3664c022c8fc4b8061d07eb461631791&sport=soccer_epl&region=us&mkt=spreads");
+        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=e8e0053776c83a4e81a9dbe5850b45ed&sport=soccer_epl&region=us&mkt=spreads");
     },
 
     signUp: function (user) {

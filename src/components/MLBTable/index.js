@@ -25,13 +25,24 @@ class MLBTable extends Component {
   render() {
     const { results } = this.state
     console.log(results)
+
+    const {state, setState, history} = this.props
+
+    console.log(this.props.state)
+    const eventTime = results.map(data => {
+      return { ...data, commence_time: new Date(data.commence_time * 1000).toString() }
+    })
+
+    console.log(eventTime)
+
+    console.log(this.props)
     return (
 
       <>
         <div class="container is-fluid">
   <div class="notification">
         <header>
-        <h1 id="MLBbanner" >MLB Games 
+        <h1 id="MLBbanner" ><strong>MLB Games </strong>
         <img id="MLB-logo" alt="mlblogo" src="https://a4.espncdn.com/combiner/i?img=%2Fi%2Fespn%2Fmisc_logos%2F500%2Fmlb.png" width="112" height="28" align="center"></img></h1>
         </header> <br></br>
         <table class="table">
@@ -47,20 +58,32 @@ class MLBTable extends Component {
           </thead>
 
           <tbody>
-            {results.map(data => {
-              return (<tr>
-                <td>{data.commence_time}</td>
-              <td>{data.home_team}</td>
-              <td>{data.teams[1]}</td>
-              <td>{data.sites[0].odds.spreads.odds[0]}</td>
-              <td>{data.sites[0].odds.spreads.points[0]}</td>
-              <td><button>Place a Bet</button></td>
+                {eventTime.map(data => {
+                  console.log(data.sites[0])
+                  if(data.sites[0] !== undefined){
+                  return (<tr>
+                    <td >{data.commence_time}</td>
+                    <td>{data.teams[0]}</td>
+                    <td>{data.teams[1]}</td>
+                    <td>{data.sites[0].odds.spreads.points[0]}</td>
+                    <td>{data.sites[0].odds.spreads.odds[0]}</td>
 
-              </tr>
-            )})} 
-           
+                    <td> <button onClick={ () => { 
+                      setState({...state, bet: data})
+                      //move to seperate page
+                      history.push('/placebet')
+                    }
+                      }>Place a Bet</button></td>
+                  </tr>
+                  )
+                          
+                  }else {return ""}
+                })}
 
-           </tbody>
+
+
+
+              </tbody>
         </table>
         </div></div>
         

@@ -25,16 +25,29 @@ class EPLTable extends Component {
   render() {
     const { results } = this.state
     console.log(results)
+
+    const {state, setState, history} = this.props
+
+    console.log(this.props.state)
+    const eventTime = results.map(data => {
+      return { ...data, commence_time: new Date(data.commence_time * 1000).toString() }
+    })
+
+    console.log(eventTime)
+
+    console.log(this.props)
     return (
 
       <>
       <div class="container is-fluid">
-  <div class="notification">
-
-
-        <h1 id="eplbanner">English Premier League Games</h1> <br></br>
-        <table class="table">
-          <thead>
+      <div class="notification">
+            <header>
+              <h1 id="eplbanner"><strong>English Premier League Games</strong><br></br>
+              <img id="epl-logo" src="https://static.dezeen.com/uploads/2016/08/designstudiopremier-league-rebrand-relaunch-logo-design-barclays-football_dezeen_slideshow-a.jpg" 
+              width="112" height="28" align="center" alt="epllogo"></img></h1>
+            </header> <br></br>
+            <table class="table">
+              <thead>
             <tr>
               <th>Date</th>
               <th>Home Team</th>
@@ -46,20 +59,32 @@ class EPLTable extends Component {
           </thead>
 
           <tbody>
-            {results.map(data => {
-              return (<tr>
-                <td>{data.commence_time}</td>
-              <td>{data.home_team}</td>
-              <td>{data.teams[1]}</td>
-              <td>{}</td>
-              <td></td>
-              <td><button>Place a Bet</button></td>
+                {eventTime.map(data => {
+                  console.log(data.sites[0])
+                  if(data.sites[0] !== undefined){
+                  return (<tr>
+                    <td >{data.commence_time}</td>
+                    <td>{data.teams[0]}</td>
+                    <td>{data.teams[1]}</td>
+                    <td>{data.sites[0].odds.spreads.points[0]}</td>
+                    <td>{data.sites[0].odds.spreads.odds[0]}</td>
 
-              </tr>
-            )})} 
-           
+                    <td> <button onClick={ () => { 
+                      setState({...state, bet: data})
+                      //move to seperate page
+                      history.push('/placebet')
+                    }
+                      }>Place a Bet</button></td>
+                  </tr>
+                  )
+                          
+                  }else {return ""}
+                })}
 
-           </tbody>
+
+
+
+              </tbody>
         </table>
         </div>
 </div>
