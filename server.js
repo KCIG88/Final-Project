@@ -21,14 +21,11 @@ app.use(express.json());
 
 
 
+ const MONGODB_URI = 'mongodb+srv://auth0-custom-db-user:Hornet94@cluster0-oidde.mongodb.net/project3?retryWrites=true&w=majority'
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://auth0-custom-db-user:Hornet94@cluster0-oidde.mongodb.net/project3?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
+  mongoose.connect(MONGODB_URI || 'mongodb://localhost:27017/project3', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 });
 
 mongoose.connection.on('connected', () => {
