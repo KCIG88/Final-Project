@@ -19,21 +19,19 @@ class Navbar extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   const token = localStorage.getItem("token")
-  //   const decoded = jwt_decode(token)
-  //   console.log(decoded.email)
-  //   console.log(token)
+  componentDidMount() {
+    const token = localStorage.getItem("token")
+    const decoded = jwt_decode(token)
 
-  //   this.setState({
-  //     email: decoded.email,
-  //     userName: decoded.userName,
-  //     balance: decoded.balance,
-  //     if(token) {
-  //       jwt_decode(token);
-  //     }
-  //   })
-  // }
+    this.setState({
+      email: decoded.email,
+      userName: decoded.userName,
+      balance: decoded.balance,
+      if(token) {
+        jwt_decode(token);
+      }
+    })
+  }
 
 
 
@@ -87,7 +85,7 @@ class Navbar extends Component {
     return (
 
       <div>
-        <nav className="navbar" role="navigation" aria-label="main navigation">
+        <nav className="navbar is-transparent" role="navigation" aria-label="main navigation">
           <div className="navbar-brand-is-dark">
 
 

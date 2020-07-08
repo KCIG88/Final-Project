@@ -45,14 +45,13 @@ class Profile extends Component {
             <>
                 <body>
                     <br></br>
-                    {/* <img src='https://avatars0.githubusercontent.com/u/58921765?v=4' class="rounded-circle" alt="" id='profileImg'></img> */}
                     < div class="container" id="profileContainer" >
                         <div class="jumbotron text-center shadow p-3 mb-5">
                             <img class="is-center" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="128px" height="128px" alt="profileImg"></img>
                             <h2>Username: {this.state.userName}</h2>
                             <h2>Email: {this.state.email}</h2>
                             <h2>Available Funds: $ {this.state.balance}</h2>
-                            <Link to="/addBalance"> <button o>Add Funds</button></Link>
+                            <Link to="/addBalance"> <button >Add Funds</button></Link>
                         </div>
                     </div >
                     <br></br>
