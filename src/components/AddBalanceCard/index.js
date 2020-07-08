@@ -34,13 +34,15 @@ class AddBalanceCard extends Component {
       }
     })
   }
-  handleChange = (e) => {
-    this.setState({ amount: parseInt(e.target.value) })
-    this.setState({ balance: parseInt(this.state.amount + this.state.balance) })
+ handleChange = async (e) => {
+    e.persist()
+    await this.setState({ amount: parseInt(e.target.value) })
+    console.log(e.target.value)
+    await this.setState({ balance: parseInt(this.state.amount + this.state.balance) })
     this.setState({ _id: (this.state._id) })
     console.log(this.state.amount)
     console.log(this.state.balance)
-    // console.log(this.state._id)
+    console.log(this.state._id)
   }
   handleSubmit(e) {
     e.preventDefault();
