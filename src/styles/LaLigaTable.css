@@ -7,6 +7,9 @@
     background-image: url("../images/spanishflag.jpeg");
     background-size:cover;
     -webkit-text-stroke: 2px black;
+    text-shadow: 4px 4px 4px  black;
+    background-position-y: 450px;
+    background-position-x: -155px;
   }
   
   

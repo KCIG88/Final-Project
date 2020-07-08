@@ -23,9 +23,9 @@ app.use(express.json());
 
 
 
- const MONGODB_URI = 'mongodb+srv://auth0-custom-db-user:Hornet94@cluster0-oidde.mongodb.net/auth0-integration?retryWrites=true&w=majority'
+//  const MONGODB_URI = 'mongodb+srv://auth0-custom-db-user:Hornet94@cluster0-oidde.mongodb.net/auth0-integration?retryWrites=true&w=majority'
 
-  mongoose.connect(MONGODB_URI || 'mongodb://localhost:27017/project3', {
+  mongoose.connect('mongodb://localhost:27017/project3', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });

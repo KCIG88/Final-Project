@@ -101,10 +101,10 @@ class Navbar extends Component {
           <div id="navbarBasicExample" className="navbar-menu">
             <div class="navbar-start">
             
-            <a href="https://ibb.co/3WdD98x">
+            
             <img src="https://i.ibb.co/WF5b4dr/logo.png" 
             style={{ height: "75px", width: "75px", marginTop:"7px", marginLeft:"7px", marginRight:"7px"  }} 
-            alt="logo" ></img></a>
+            alt="logo" ></img>
               
               {/* Home */}
               <Link className="navbar-item" id="navbarLeft" to="/">
