@@ -42,7 +42,7 @@ users.post('/register', (req, res) => {
     })
 })
 
-users.post('/login', (req, res) => {
+users.post('/signin', (req, res) => {
   console.log(req.body)
   User.findOne({
     email: req.body.email
