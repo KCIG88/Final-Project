@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const register = newUser => {
     return axios
-        .post('mongodb+srv://auth0-custom-db-user:Hornet94@cluster0-oidde.mongodb.net/auth0-integration?retryWrites=true&w=majority', {
+        .post('mongodb+srv://auth0-custom-db-user:Hornet94@cluster0-oidde.mongodb.net/project3?retryWrites=true&w=majority', {
             userName: newUser.userName,
             email: newUser.email,
             password: newUser.password,
@@ -14,7 +14,7 @@ export const register = newUser => {
 
 export const login = user => {
     return axios
-        .post('mongodb+srv://auth0-custom-db-user:Hornet94@cluster0-oidde.mongodb.net/auth0-integration?retryWrites=true&w=majority', {
+        .post('mongodb+srv://auth0-custom-db-user:Hornet94@cluster0-oidde.mongodb.net/project3?retryWrites=true&w=majority', {
             email: user.email,
             password: user.password
         })
