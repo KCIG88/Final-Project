@@ -19,19 +19,19 @@ class Navbar extends Component {
     }
   }
 
-  componentDidMount() {
-    const token = localStorage.getItem("token")
-    const decoded = jwt_decode(token)
+//   componentDidMount() {
+//     const token = localStorage.getItem("token")
+//     const decoded = jwt_decode(token)
 
-    this.setState({
-      email: decoded.email,
-      userName: decoded.userName,
-      balance: decoded.balance,
-      if(token) {
-        jwt_decode(token);
-      }
-    })
-  }
+//     this.setState({
+//       email: decoded.email,
+//       userName: decoded.userName,
+//       balance: decoded.balance,
+//       if(token) {
+//         jwt_decode(token);
+//       }
+//     })
+//   }
 
 
 
