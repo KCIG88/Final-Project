@@ -155,22 +155,22 @@ class Navbar extends Component {
               </a>
               <div className="navbar-dropdown is-right">
                 <Link className="navbar-item" to="/nfl">
-                  NFL
+                  <strong>NFL</strong>
                   </Link>
                 <Link className="navbar-item" to="/ncaa">
-                  NCAA Football
+                  <strong>NCAA Football</strong>
                   </Link>
                 <Link className="navbar-item" to="/mlb">
-                  MLB
+                  <strong>MLB</strong>
                   </Link>
                 <Link className="navbar-item" to="/epl">
-                  EPL
+                 <strong>EPL</strong> 
                   </Link>
                 <Link className="navbar-item" to="/laliga">
-                  La Liga
+                 <strong>La Liga</strong> 
                   </Link>
                 <Link className="navbar-item" to="/bundesliga">
-                  Bundesliga
+                  <strong>Bundesliga</strong>
                   </Link>
 
               </div>

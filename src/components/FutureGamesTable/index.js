@@ -1,5 +1,6 @@
 import React, { Component} from "react";
 import API from "../../utils/API";
+
 import "../../styles/FutureGamesTable.css";
 
 class FutureGamesTables extends Component {
@@ -48,7 +49,9 @@ class FutureGamesTables extends Component {
       <>
         <div class="container is-fluid">
           <div class="notification">
+
             <h1 id="FutureGamesbanner"><strong>Upcoming Games</strong></h1>
+
             <br></br>
             <table class="table">
               <thead>
