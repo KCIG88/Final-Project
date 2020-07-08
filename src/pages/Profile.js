@@ -20,19 +20,19 @@ class Profile extends Component {
         }
     }
 
-    componentDidMount() {
-        const token = localStorage.getItem("token")
-        const decoded = jwt_decode(token)
-        if (token) {
-            jwt_decode(token);
-        } else { this.props.history.push('/login') }
-        this.setState({
-            _id: decoded._id,
-            email: decoded.email,
-            userName: decoded.userName,
-            balance: decoded.balance,
-        })
-    }
+//     componentDidMount() {
+//         const token = localStorage.getItem("token")
+//         const decoded = jwt_decode(token)
+//         if (token) {
+//             jwt_decode(token);
+//         } else { this.props.history.push('/login') }
+//         this.setState({
+//             _id: decoded._id,
+//             email: decoded.email,
+//             userName: decoded.userName,
+//             balance: decoded.balance,
+//         })
+//     }
 
 
     render() {
