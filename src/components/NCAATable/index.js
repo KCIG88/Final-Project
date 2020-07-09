@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-
+import ncaaLogo from "../../images/ncaaOfficialLogo.png"
 import "../../styles/NcaaTable.css";
 
 class NCAATable extends Component {
@@ -43,7 +43,7 @@ class NCAATable extends Component {
           <div class="notification">
             <header>
               <h1 id="NCAAbanner" ><strong>Top College Football games 2020-2021 Season</strong><br></br>
-                <img id="Nfl-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/NCAA_logo.svg/1042px-NCAA_logo.svg.png" width="112" height="28" align="center" alt="ncaalogo"></img></h1>
+                <img id="Nfl-logo" src={ncaaLogo} width="112" height="28" align="center" alt="ncaalogo"></img></h1>
             </header> <br></br>
             <table class="table">
               <thead>

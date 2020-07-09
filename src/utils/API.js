@@ -31,31 +31,31 @@ export default {
     },
 
     getNFLoddsapi: function () {
-        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=1c9c9697e1c01c7b5a8668d184467046&sport=americanfootball_nfl&region=us&mkt=spreads");
+        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=edaef6c4093d6b1d394dad74ecf033c8&sport=americanfootball_nfl&region=us&mkt=spreads");
     },
 
     getNCAAoddsapi: function () {
-        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=1c9c9697e1c01c7b5a8668d184467046&sport=americanfootball_ncaaf&region=us&mkt=spreads");
+        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=edaef6c4093d6b1d394dad74ecf033c8&sport=americanfootball_ncaaf&region=us&mkt=spreads");
     },
 
     getMLBoddsapi: function () {
-        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=1c9c9697e1c01c7b5a8668d184467046&sport=baseball_mlb&region=us&mkt=spreads");
+        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=edaef6c4093d6b1d394dad74ecf033c8&sport=baseball_mlb&region=us&mkt=spreads");
     },
 
     getEPLoddsapi: function () {
-        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=1c9c9697e1c01c7b5a8668d184467046&sport=soccer_epl&region=us&mkt=spreads");
+        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=edaef6c4093d6b1d394dad74ecf033c8&sport=soccer_epl&region=us&mkt=spreads");
     },
 
     getLALIGAoddsapi: function () {
-        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=1c9c9697e1c01c7b5a8668d184467046&sport=soccer_spain_la_liga&region=us&mkt=spreads");
+        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=edaef6c4093d6b1d394dad74ecf033c8&sport=soccer_spain_la_liga&region=us&mkt=spreads");
     },
 
     getGERModdsapi: function () {
-        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=e8e0053776c83a4e81a9dbe5850b45ed&sport=soccer_germany_bundesliga&region=us&mkt=spreads");
+        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=edaef6c4093d6b1d394dad74ecf033c8&sport=soccer_germany_bundesliga&region=us&mkt=spreads");
     },
 
     getoddsapi: function () {
-        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=e8e0053776c83a4e81a9dbe5850b45ed&sport=soccer_epl&region=us&mkt=spreads");
+        return axios.get("https://api.the-odds-api.com/v3/odds/?apiKey=edaef6c4093d6b1d394dad74ecf033c8&sport=soccer_epl&region=us&mkt=spreads");
     },
 
     signUp: function (user) {

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 
 import "../../styles/EPLTable.css";
-
+import eplLogo from "../../images/eplOfficialLogo.png"
 class EPLTable extends Component {
 
   state = {
@@ -43,7 +43,7 @@ class EPLTable extends Component {
       <div class="notification">
             <header>
               <h1 id="eplbanner"><strong>English Premier League Games</strong><br></br>
-              <img id="epl-logo" src="https://static.dezeen.com/uploads/2016/08/designstudiopremier-league-rebrand-relaunch-logo-design-barclays-football_dezeen_slideshow-a.jpg" 
+              <img id="epl-logo" src={eplLogo} 
               width="112" height="28" align="center" alt="epllogo"></img></h1>
             </header> <br></br>
             <table class="table">

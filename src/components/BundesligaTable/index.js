@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-
+import bundesligaLogo from "../../images/bundeligaOfficialLogo.png"
 import "../../styles/BundesligaTable.css";
 
 class BundesligaTable extends Component {
@@ -43,7 +43,7 @@ class BundesligaTable extends Component {
           <div class="notification">
             <header>
               <h1 id="GERMbanner" ><strong>Bundesliga Soccer Games</strong><br></br>
-              <img id="GERM-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/2._Bundesliga_logo.svg/1200px-2._Bundesliga_logo.svg.png" width="112" height="28" align="center" alt="germlogo"></img></h1>
+              <img id="GERM-logo" src={bundesligaLogo} width="112" height="28" align="center" alt="germlogo"></img></h1>
             </header> <br></br>
             <table class="table">
               <thead>

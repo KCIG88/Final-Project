@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../../styles/BundesligaTable.css";
+import "../../styles/placeBet.css";
 
 
 class PlaceBetCard extends Component {
@@ -94,17 +94,17 @@ class PlaceBetCard extends Component {
                     <table>
                       <thead>
                         <tr>
-                          <th> Prediction </th>
-                          <th> Odds </th>
-                          <th> Wager </th>
-                          <th> Potential Win </th>
+                          <th id="placebet"> Prediction </th>
+                          <th id="placebet"> Odds </th>
+                          <th id="placebet"> Wager </th>
+                          <th id="placebet"> Potential Win </th>
                         </tr>
                       </thead>
                       <tbody>
-                        <td>{this.state.Prediction} </td>
-                        <td> {matchOdds} </td>
-                        <td> {this.state.Wager} </td>
-                        <td> ${matchOdds * this.state.Wager} </td>
+                        <td id="placebet">{this.state.Prediction} </td>
+                        <td id="placebet"> {matchOdds} </td>
+                        <td id="placebet"> {this.state.Wager} </td>
+                        <td id="placebet"> ${matchOdds * this.state.Wager} </td>
                       </tbody>
                     </table>
                   </div>

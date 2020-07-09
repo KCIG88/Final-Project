@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-
+import mlbLogo from "../../images/mlbOfficialLogo.png"
 import "../../styles/mlbtable.css";
 
 class MLBTable extends Component {
@@ -43,7 +43,7 @@ class MLBTable extends Component {
   <div class="notification">
         <header>
         <h1 id="MLBbanner" ><strong>MLB Games </strong>
-        <img id="MLB-logo" alt="mlblogo" src="https://a4.espncdn.com/combiner/i?img=%2Fi%2Fespn%2Fmisc_logos%2F500%2Fmlb.png" width="112" height="28" align="center"></img></h1>
+        <img id="MLB-logo" alt="mlblogo" src={mlbLogo} width="112" height="28" align="center"></img></h1>
         </header> <br></br>
         <table class="table">
           <thead>

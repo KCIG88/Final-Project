@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-
+import laLigaLogo from "../../images/laLigaOfficialLogo.png"
 import "../../styles/LaLigaTable.css";
 
 class LALIGATable extends Component {
@@ -43,7 +43,7 @@ class LALIGATable extends Component {
       <div class="notification">
             <header>
               <h1 id="ligabanner"><strong>La Liga Soccer Games</strong>
-              <img id="liga-logo" src="https://upload.wikimedia.org/wikipedia/commons/1/13/LaLiga.svg" width="112" height="28" align="center" alt="ligalogo"></img></h1>
+              <img id="liga-logo" src={laLigaLogo} width="112" height="28" align="center" alt="ligalogo"></img></h1>
             </header> <br></br>
             <table class="table">
               <thead>

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import "../../styles/nflTable.css";
+import nflLogo from "../../images/nflOfficialLogo.png"
+import "../../styles/NcaaTable.css";
+
 
 class NflTable extends Component {
 
@@ -42,7 +45,7 @@ class NflTable extends Component {
           <div class="notification">
           <header>
         <h1 id="NFLbanner" ><strong>Week 1-16 NFL Games</strong><br></br>
-        <img id="Nfl-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/National_Football_League_logo.svg/225px-National_Football_League_logo.svg.png" width="112" height="28" align="center" alt="nfllogo"></img></h1>
+        <img id="Nfl-logo" src={nflLogo} width="112" height="28" align="center" alt="nfllogo"></img></h1>
         </header> <br></br>
         <table class="table">
           <thead>
